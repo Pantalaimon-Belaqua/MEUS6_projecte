@@ -11,4 +11,9 @@ package utils;
  */
 public class GenerateAnimals {
     
+    public static String generateName() {
+        String name = "BArtodlo";
+        return name;
+    }
+    
 }
