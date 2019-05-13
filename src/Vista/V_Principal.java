@@ -29,15 +29,12 @@ public class V_Principal extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
-        catJuguete = new javax.swing.JCheckBox();
-        catElectronica = new javax.swing.JCheckBox();
-        catRopa = new javax.swing.JCheckBox();
         botonAñadir = new javax.swing.JButton();
         botonEliminar = new javax.swing.JButton();
         botonEditar = new javax.swing.JButton();
         buscador = new javax.swing.JTextField();
-        catCocina = new javax.swing.JCheckBox();
         notaBuscador = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -63,12 +60,6 @@ public class V_Principal extends javax.swing.JFrame {
         tablaProductos.setEnabled(false);
         jScrollPane1.setViewportView(tablaProductos);
 
-        catJuguete.setText("Juguetes");
-
-        catElectronica.setText("Electronica");
-
-        catRopa.setText("Ropa");
-
         botonAñadir.setText("Añadir");
 
         botonEliminar.setText("Eliminar");
@@ -77,10 +68,10 @@ public class V_Principal extends javax.swing.JFrame {
 
         buscador.setToolTipText("Buscar...");
 
-        catCocina.setText("Cocina");
-
         notaBuscador.setText("(Case sensitive)");
         notaBuscador.setToolTipText("");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/descarga.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,55 +80,44 @@ public class V_Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonEditar)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(notaBuscador)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)))
+                .addContainerGap(261, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonAñadir)
-                                .addGap(110, 110, 110)
-                                .addComponent(botonEliminar)
-                                .addGap(125, 125, 125)
-                                .addComponent(botonEditar)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(catJuguete)
-                            .addComponent(catElectronica)
-                            .addComponent(catRopa)
-                            .addComponent(catCocina))
-                        .addGap(23, 23, 23))))
+                        .addComponent(botonAñadir)
+                        .addGap(144, 144, 144)
+                        .addComponent(botonEliminar))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(catJuguete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(catElectronica)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(catRopa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(catCocina)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(12, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(notaBuscador))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(172, 172, 172))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonAñadir)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEliminar)
-                    .addComponent(botonEditar))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(botonEditar)
+                    .addComponent(botonAñadir))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,10 +164,7 @@ public class V_Principal extends javax.swing.JFrame {
     private javax.swing.JButton botonEditar;
     public javax.swing.JButton botonEliminar;
     public javax.swing.JTextField buscador;
-    public javax.swing.JCheckBox catCocina;
-    public javax.swing.JCheckBox catElectronica;
-    public javax.swing.JCheckBox catJuguete;
-    public javax.swing.JCheckBox catRopa;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel notaBuscador;
     public javax.swing.JTable tablaProductos;
