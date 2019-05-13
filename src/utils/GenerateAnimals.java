@@ -21,6 +21,11 @@ public class GenerateAnimals {
         return array[choice];
     }
     
+    public static String generateSpecies(){
+        String [] array = "{Gato, Tortuga, León, Perro, Serpiente, Loro, Elefante, Lagartija, Mono, Perezoso, Pez}".split(",");
+        int choice = random.nextInt(array.length);
+        return array[choice];
+    }
     
     
 }
