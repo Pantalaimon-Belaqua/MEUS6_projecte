@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package Controlador;
+
+import Pers.BaseDAO;
+import Pers.PrincipalDAO;
+import Vista.V_Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
@@ -53,10 +57,15 @@ public class C_Principal {
                 
                 try {
                     // Recoge la lista de productos de la BBDD
-                    ArrayList<M_Producto> productos = principalDAO.getProducts();
+                    ArrayList<M_Animal> animales = principalDAO.getProducts();
                     
                     // Añade las filas a la tabla
-                    for (M_Producto producto  : productos) {
+                    for (M_Animal animal : animales) {
+                        
+                        /***
+                         * Añadir las cosas en orden del arraylist al row
+                         */
+                        
                         model.addRow(new Object[]{producto.getCode(), producto.getDescripcion(), 
                             producto.getCategoria(), producto.getPrecio(), producto.getUbicacion(), 
                             producto.getTipo(), producto.getOferta()});
