@@ -43,46 +43,46 @@ public class V_Agregar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Ubuntu Condensed", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(28, 28, 9));
         jLabel2.setText("Informe");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, -1));
 
         label_tipo.setFont(new java.awt.Font("TlwgTypewriter", 0, 18)); // NOI18N
         label_tipo.setForeground(new java.awt.Color(1, 1, 1));
         label_tipo.setText("Tipo");
-        getContentPane().add(label_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        getContentPane().add(label_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("TlwgTypewriter", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Número");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("TlwgTypewriter", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(1, 1, 1));
         jLabel5.setText("Precio");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
 
         text_numero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_numeroActionPerformed(evt);
             }
         });
-        getContentPane().add(text_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 44, -1));
+        getContentPane().add(text_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 44, -1));
 
         text_tipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_tipoActionPerformed(evt);
             }
         });
-        getContentPane().add(text_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 44, -1));
+        getContentPane().add(text_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 80, -1));
 
         text_precio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_precioActionPerformed(evt);
             }
         });
-        getContentPane().add(text_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 70, 30));
+        getContentPane().add(text_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 70, 30));
 
         bttn_enviar.setText("Enviar");
         getContentPane().add(bttn_enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 90, 30));
@@ -90,15 +90,15 @@ public class V_Agregar extends javax.swing.JFrame {
         label_resultado.setFont(new java.awt.Font("TlwgTypewriter", 0, 18)); // NOI18N
         label_resultado.setForeground(new java.awt.Color(1, 1, 1));
         label_resultado.setText("Resultado");
-        getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
+        getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
         text_resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_resultadoActionPerformed(evt);
             }
         });
-        getContentPane().add(text_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 70, 30));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 260, 230));
+        getContentPane().add(text_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 130, 30));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 290, 210));
 
         jLabel13.setBackground(new java.awt.Color(240, 244, 245));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
