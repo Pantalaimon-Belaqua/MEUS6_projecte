@@ -34,9 +34,7 @@ public class PrincipalDAO extends BaseDAO {
         // Mientras haya animales
         while(rs.next()){
             
-            /***
-             * Coger las cosas del RS y añadirlas al modelo de Animal
-             */
+            M_Animal m_animal = new M_Animal();
             
         }
         rs.close();
