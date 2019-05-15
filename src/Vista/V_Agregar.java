@@ -31,12 +31,12 @@ public class V_Agregar extends javax.swing.JFrame {
         label_tipo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        text_numero = new javax.swing.JTextField();
-        text_tipo = new javax.swing.JTextField();
-        text_precio = new javax.swing.JTextField();
+        input_numero = new javax.swing.JTextField();
+        input_tipo = new javax.swing.JTextField();
+        input_precio = new javax.swing.JTextField();
         bttn_enviar = new javax.swing.JButton();
         label_resultado = new javax.swing.JLabel();
-        text_resultado = new javax.swing.JTextField();
+        input_resultado = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
 
@@ -63,26 +63,26 @@ public class V_Agregar extends javax.swing.JFrame {
         jLabel5.setText("Precio");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
 
-        text_numero.addActionListener(new java.awt.event.ActionListener() {
+        input_numero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_numeroActionPerformed(evt);
+                input_numeroActionPerformed(evt);
             }
         });
-        getContentPane().add(text_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 44, -1));
+        getContentPane().add(input_numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 44, -1));
 
-        text_tipo.addActionListener(new java.awt.event.ActionListener() {
+        input_tipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_tipoActionPerformed(evt);
+                input_tipoActionPerformed(evt);
             }
         });
-        getContentPane().add(text_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 80, -1));
+        getContentPane().add(input_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 80, -1));
 
-        text_precio.addActionListener(new java.awt.event.ActionListener() {
+        input_precio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_precioActionPerformed(evt);
+                input_precioActionPerformed(evt);
             }
         });
-        getContentPane().add(text_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 70, 30));
+        getContentPane().add(input_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 70, 30));
 
         bttn_enviar.setText("Enviar");
         getContentPane().add(bttn_enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 90, 30));
@@ -92,12 +92,12 @@ public class V_Agregar extends javax.swing.JFrame {
         label_resultado.setText("Resultado");
         getContentPane().add(label_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
-        text_resultado.addActionListener(new java.awt.event.ActionListener() {
+        input_resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_resultadoActionPerformed(evt);
+                input_resultadoActionPerformed(evt);
             }
         });
-        getContentPane().add(text_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 130, 30));
+        getContentPane().add(input_resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 130, 30));
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 290, 210));
 
         jLabel13.setBackground(new java.awt.Color(240, 244, 245));
@@ -110,21 +110,21 @@ public class V_Agregar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void text_numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_numeroActionPerformed
+    private void input_numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_numeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_numeroActionPerformed
+    }//GEN-LAST:event_input_numeroActionPerformed
 
-    private void text_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_tipoActionPerformed
+    private void input_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_tipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_tipoActionPerformed
+    }//GEN-LAST:event_input_tipoActionPerformed
 
-    private void text_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_precioActionPerformed
+    private void input_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_precioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_precioActionPerformed
+    }//GEN-LAST:event_input_precioActionPerformed
 
-    private void text_resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_resultadoActionPerformed
+    private void input_resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_resultadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_resultadoActionPerformed
+    }//GEN-LAST:event_input_resultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +166,10 @@ public class V_Agregar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bttn_enviar;
+    public javax.swing.JTextField input_numero;
+    public javax.swing.JTextField input_precio;
+    public javax.swing.JTextField input_resultado;
+    public javax.swing.JTextField input_tipo;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -173,9 +177,5 @@ public class V_Agregar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel label_resultado;
     private javax.swing.JLabel label_tipo;
-    public javax.swing.JTextField text_numero;
-    public javax.swing.JTextField text_precio;
-    public javax.swing.JTextField text_resultado;
-    public javax.swing.JTextField text_tipo;
     // End of variables declaration//GEN-END:variables
 }

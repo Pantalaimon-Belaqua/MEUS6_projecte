@@ -9,12 +9,12 @@ package Vista;
  *
  * @author noelia
  */
-public class V_Eliminar extends javax.swing.JFrame {
+public class V_DelAnimal extends javax.swing.JFrame {
 
     /**
-     * Creates new form V_Eliminar
+     * Creates new form V_DelAnimal
      */
-    public V_Eliminar() {
+    public V_DelAnimal() {
         initComponents();
     }
 
@@ -27,38 +27,56 @@ public class V_Eliminar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bttn_eliminarCuidador = new javax.swing.JButton();
-        bttn_eliminarAnimal = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        input_idAnimal = new javax.swing.JTextField();
+        bttn_eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bttn_eliminarCuidador.setText("Eliminar cuidador");
+        jLabel1.setText("Id animal");
 
-        bttn_eliminarAnimal.setText("Eliminar animal");
+        input_idAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                input_idAnimalActionPerformed(evt);
+            }
+        });
+
+        bttn_eliminar.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bttn_eliminarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bttn_eliminarCuidador))
-                .addContainerGap(164, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel1)
+                        .addGap(31, 31, 31)
+                        .addComponent(input_idAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(bttn_eliminar)))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addComponent(bttn_eliminarCuidador)
-                .addGap(36, 36, 36)
-                .addComponent(bttn_eliminarAnimal)
-                .addGap(59, 59, 59))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(input_idAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(58, 58, 58)
+                .addComponent(bttn_eliminar)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void input_idAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_idAnimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_idAnimalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,26 +95,27 @@ public class V_Eliminar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_Eliminar().setVisible(true);
+                new V_DelAnimal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_eliminarAnimal;
-    public javax.swing.JButton bttn_eliminarCuidador;
+    public javax.swing.JButton bttn_eliminar;
+    public javax.swing.JTextField input_idAnimal;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
