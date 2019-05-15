@@ -46,6 +46,8 @@ public class AddAnimalDAO extends BaseDAO {
          * 
          * No comprovamos que el DNI exista porque el usuario sólo puede escojer DNIs existentes del selectbox
          */
+        
+        System.out.println(animal.getEspecie() + " añadido");
     }
     
 }
