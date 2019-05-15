@@ -20,15 +20,11 @@ import java.util.logging.Logger;
 public class BaseDAO {
 
     static String url = "jdbc:mysql://192.168.55.120:3306/";
-    static String db = "Productos_UF6EX2";
+    static String db = "Centro_adopcion";
     static String user = "master";
     static String pass = "daw1234";
 
     protected static Connection conn = null;
-    //  private static DataSource ds;
-
-    
-
     
     
     public static void connect() {       
