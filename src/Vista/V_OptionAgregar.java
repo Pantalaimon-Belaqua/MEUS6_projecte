@@ -9,12 +9,12 @@ package Vista;
  *
  * @author noelia
  */
-public class V_Eliminar extends javax.swing.JFrame {
+public class V_OptionAgregar extends javax.swing.JFrame {
 
     /**
-     * Creates new form V_Eliminar
+     * Creates new form V_OptionAgregar
      */
-    public V_Eliminar() {
+    public V_OptionAgregar() {
         initComponents();
     }
 
@@ -27,34 +27,40 @@ public class V_Eliminar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bttn_eliminarCuidador = new javax.swing.JButton();
-        bttn_eliminarAnimal = new javax.swing.JButton();
+        bttn_agregarAnimal = new javax.swing.JButton();
+        bttn_agregarCuidador = new javax.swing.JButton();
+        bttn_agregarVisita = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bttn_eliminarCuidador.setText("Eliminar cuidador");
+        bttn_agregarAnimal.setText("Animal");
 
-        bttn_eliminarAnimal.setText("Eliminar animal");
+        bttn_agregarCuidador.setText("Cuidador");
+
+        bttn_agregarVisita.setText("Visita");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bttn_eliminarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bttn_eliminarCuidador))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGap(182, 182, 182)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bttn_agregarCuidador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bttn_agregarAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bttn_agregarVisita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addComponent(bttn_eliminarCuidador)
-                .addGap(36, 36, 36)
-                .addComponent(bttn_eliminarAnimal)
-                .addGap(59, 59, 59))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(bttn_agregarAnimal)
+                .addGap(26, 26, 26)
+                .addComponent(bttn_agregarCuidador)
+                .addGap(28, 28, 28)
+                .addComponent(bttn_agregarVisita)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -77,26 +83,27 @@ public class V_Eliminar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionAgregar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_Eliminar().setVisible(true);
+                new V_OptionAgregar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_eliminarAnimal;
-    public javax.swing.JButton bttn_eliminarCuidador;
+    public javax.swing.JButton bttn_agregarAnimal;
+    public javax.swing.JButton bttn_agregarCuidador;
+    public javax.swing.JButton bttn_agregarVisita;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,12 +9,12 @@ package Vista;
  *
  * @author noelia
  */
-public class V_DelAnimal extends javax.swing.JFrame {
+public class V_OptionEliminar extends javax.swing.JFrame {
 
     /**
-     * Creates new form V_DelAnimal
+     * Creates new form V_Eliminar
      */
-    public V_DelAnimal() {
+    public V_OptionEliminar() {
         initComponents();
     }
 
@@ -27,37 +27,25 @@ public class V_DelAnimal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        input_idAnimal = new javax.swing.JTextField();
-        bttn_eliminar = new javax.swing.JButton();
+        bttn_eliminarCuidador = new javax.swing.JButton();
+        bttn_eliminarAnimal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        input_idAnimal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_idAnimalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(input_idAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 44, -1));
+        bttn_eliminarCuidador.setText("Eliminar cuidador");
+        getContentPane().add(bttn_eliminarCuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 58, -1, -1));
 
-        bttn_eliminar.setText("Eliminar");
-        getContentPane().add(bttn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
+        bttn_eliminarAnimal.setText("Eliminar animal");
+        getContentPane().add(bttn_eliminarAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 123, 131, -1));
 
-        jLabel1.setText("Id animal");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
-
-        jLabel2.setBackground(new java.awt.Color(178, 244, 218));
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 280));
+        jLabel1.setBackground(new java.awt.Color(255, 210, 140));
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void input_idAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_idAnimalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_idAnimalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,28 +64,28 @@ public class V_DelAnimal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionEliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionEliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionEliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_DelAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_OptionEliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_DelAnimal().setVisible(true);
+                new V_OptionEliminar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_eliminar;
-    public javax.swing.JTextField input_idAnimal;
+    public javax.swing.JButton bttn_eliminarAnimal;
+    public javax.swing.JButton bttn_eliminarCuidador;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
