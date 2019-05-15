@@ -5,6 +5,7 @@
  */
 package Pers;
 
+import Modelo.M_Animal;
 import static Pers.BaseDAO.connect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +22,7 @@ public class PrincipalDAO extends BaseDAO {
         connect();
     }
     
-    public ArrayList getProducts() throws SQLException{
+    public ArrayList getAnimales() throws SQLException{
         ArrayList<M_Animal> animales = new ArrayList<M_Animal>();
         
         ResultSet rs; // Guardará el resultado de la query
@@ -30,7 +31,7 @@ public class PrincipalDAO extends BaseDAO {
         PreparedStatement stmt = conn.prepareStatement(query);
         rs = stmt.executeQuery(); // Conseguir los datos de todos los productos
         
-        // Mientras haya productos
+        // Mientras haya animales
         while(rs.next()){
             
             /***
