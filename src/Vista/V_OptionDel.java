@@ -40,7 +40,7 @@ public class V_OptionDel extends javax.swing.JFrame {
         bttn_eliminarAnimal.setText("Eliminar animal");
         getContentPane().add(bttn_eliminarAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 123, 131, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 210, 140));
+        jLabel1.setBackground(new java.awt.Color(140, 190, 255));
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 210));
 
