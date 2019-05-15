@@ -12,6 +12,7 @@ package Modelo;
 public class M_Visita {
     
     private int id;
+    private int idAnimal;
     private String tipoVisita;
     private String resultado;
     private double precio;
@@ -19,8 +20,9 @@ public class M_Visita {
     public M_Visita() {
     }
 
-    public M_Visita(int id, String tipoVisita, String resultado, double precio) {
+    public M_Visita(int id, int idAnimal, String tipoVisita, String resultado, double precio) {
         this.id = id;
+        this.idAnimal = idAnimal;
         this.tipoVisita = tipoVisita;
         this.resultado = resultado;
         this.precio = precio;
@@ -58,11 +60,17 @@ public class M_Visita {
         this.precio = precio;
     }
 
+    public int getIdAnimal() {
+        return idAnimal;
+    }
+
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
+    }
+
     @Override
     public String toString() {
-        return "M_Visita{" + "id=" + id + ", tipoVisita=" + tipoVisita + ", resultado=" + resultado + ", precio=" + precio + '}';
+        return "M_Visita{" + "id=" + id + ", idAnimal=" + idAnimal + ", tipoVisita=" + tipoVisita + ", resultado=" + resultado + ", precio=" + precio + '}';
     }
-    
-    
     
 }
