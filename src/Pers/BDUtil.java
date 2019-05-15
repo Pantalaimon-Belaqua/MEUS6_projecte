@@ -24,30 +24,56 @@ public class BDUtil {
         Connection conn = BaseDAO.getConn();
 
         PreparedStatement stmt;
+        String query;
         
-        String query = "CREATE TABLE Categoria "
-                + "(code INT NOT NULL AUTO_INCREMENT,"
-                + " categoria varchar(30) NOT NULL,"
-                + " PRIMARY KEY (code)"
+        query = "CREATE TABLE Animal "
+                + "(id INT NOT NULL AUTO_INCREMENT,"
+                + " nombre varchar(30) NOT NULL,"
+                + " especie varchar(30) NOT NULL,"
+                + " PRIMARY KEY (id)"
                 + "  )";
         stmt = conn.prepareStatement(query);
         stmt.executeUpdate();
         stmt.close();
         
-        query = "CREATE TABLE Producto "
-                + "(code INT NOT NULL, "
-                + " descripcion text,"
-                + " categoria INT,"
-                + " precio DECIMAL(18,2),"
-                + " ubicacion varchar(3),"
-                + " tipo varchar(25),"
-                + " oferta DECIMAL(3,2),"
-                + " PRIMARY KEY (code),"
-                + " FOREIGN KEY (categoria) references Categoria (code)"
+        query = "CREATE TABLE Visita "
+                + "(id INT NOT NULL AUTO_INCREMENT,"
+                + " idAnimal INT NOT NULL,"
+                + " tipoVisita varchar(30) NOT NULL,"
+                + " resultado varchar(30) NOT NULL,"
+                + " precio decimal(8,2),"
+                + " PRIMARY KEY (id),"
+                + "FOREIGN KEY (idAnimal) references Animal (id)"
+                + "  )";
+        stmt = conn.prepareStatement(query);
+        stmt.executeUpdate();
+        stmt.close();
+        
+        query = "CREATE TABLE Cuidador "
+                + "(DNI varchar(9) NOT NULL,"
+                + " nombre varchar(30) NOT NULL,"
+                + " direccion varchar(90) NOT NULL,"
+                + " telefono varchar(20) NOT NULL,"
+                + " PRIMARY KEY (DNI)"
                 + ")";
         stmt = conn.prepareStatement(query);
         stmt.executeUpdate();
         stmt.close();
+        
+        query = "CREATE TABLE animal_cuidador "
+                + "(idAnimal INT NOT NULL,"
+                + " DNICuidador varchar(9) NOT NULL,"
+                + " PRIMARY KEY (idAnimal, DNICuidador),"
+                + " FOREIGN KEY (idAnimal) references Animal (id),"
+                + " FOREIGN KEY (DNICuidador) references Cuidador (DNI)"
+                + ")";
+        stmt = conn.prepareStatement(query);
+        stmt.executeUpdate();
+        stmt.close();
+        
+        System.out.println("Estructura creada");
+        
+        BaseDAO.close();
     }
     
     public static void insertarDatos(){
