@@ -27,41 +27,26 @@ public class V_OptionAdd extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bttn_agregarAnimal = new javax.swing.JButton();
         bttn_agregarCuidador = new javax.swing.JButton();
         bttn_agregarVisita = new javax.swing.JButton();
+        bttn_agregarAnimal = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        bttn_agregarAnimal.setText("Animal");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bttn_agregarCuidador.setText("Cuidador");
+        getContentPane().add(bttn_agregarCuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 128, -1, -1));
 
         bttn_agregarVisita.setText("Visita");
+        getContentPane().add(bttn_agregarVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 185, 75, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bttn_agregarCuidador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bttn_agregarAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bttn_agregarVisita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(199, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(bttn_agregarAnimal)
-                .addGap(26, 26, 26)
-                .addComponent(bttn_agregarCuidador)
-                .addGap(28, 28, 28)
-                .addComponent(bttn_agregarVisita)
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
+        bttn_agregarAnimal.setText("Animal");
+        getContentPane().add(bttn_agregarAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 73, 75, -1));
+
+        jLabel1.setBackground(new java.awt.Color(253, 185, 210));
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 280));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,5 +91,6 @@ public class V_OptionAdd extends javax.swing.JFrame {
     public javax.swing.JButton bttn_agregarAnimal;
     public javax.swing.JButton bttn_agregarCuidador;
     public javax.swing.JButton bttn_agregarVisita;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

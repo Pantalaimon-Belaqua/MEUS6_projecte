@@ -29,10 +29,12 @@ public class V_AddAnimal extends javax.swing.JFrame {
 
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        input_especie = new javax.swing.JTextField();
         input_nombreAnimal1 = new javax.swing.JTextField();
         bttn_addAnimal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        select_cuidador = new javax.swing.JComboBox();
+        input_especie = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
@@ -42,42 +44,49 @@ public class V_AddAnimal extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Especie");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
-
-        input_especie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_especieActionPerformed(evt);
-            }
-        });
-        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 124, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
         input_nombreAnimal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_nombreAnimal1ActionPerformed(evt);
             }
         });
-        getContentPane().add(input_nombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 124, -1));
+        getContentPane().add(input_nombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 124, -1));
 
         bttn_addAnimal.setText("Enviar");
-        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
+        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Nombre");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoanimal03_opt (1).jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 350));
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel4.setText("Cuidador");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+
+        select_cuidador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ninguno" }));
+        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, -1, -1));
+
+        input_especie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                input_especieActionPerformed(evt);
+            }
+        });
+        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 124, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoanimal03_opt.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void input_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_especieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_especieActionPerformed
-
     private void input_nombreAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreAnimal1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_input_nombreAnimal1ActionPerformed
+
+    private void input_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_especieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_especieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,6 +130,8 @@ public class V_AddAnimal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton jRadioButton1;
+    public javax.swing.JComboBox select_cuidador;
     // End of variables declaration//GEN-END:variables
 }
