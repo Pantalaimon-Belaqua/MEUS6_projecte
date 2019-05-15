@@ -41,6 +41,7 @@ public class Main {
         M_Animal a3 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
         M_Animal a4 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
         M_Animal a5 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a6 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
         
         try {
             addAnimalDAO.addAnimal(a1);
@@ -48,6 +49,7 @@ public class Main {
             addAnimalDAO.addAnimal(a3);
             addAnimalDAO.addAnimal(a4);
             addAnimalDAO.addAnimal(a5);
+            addAnimalDAO.addAnimal(a6);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
