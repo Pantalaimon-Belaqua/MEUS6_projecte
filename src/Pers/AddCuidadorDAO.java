@@ -35,7 +35,7 @@ public class AddCuidadorDAO extends BaseDAO {
         
         stmt.close();
         
-        System.out.println("\t" + cuidador.getNombre() + " añadido");
+        System.out.println("   " + cuidador.getNombre() + " añadido");
         
     }
     
