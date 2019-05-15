@@ -20,8 +20,7 @@ public class M_Visita {
     public M_Visita() {
     }
 
-    public M_Visita(int id, int idAnimal, String tipoVisita, String resultado, double precio) {
-        this.id = id;
+    public M_Visita(int idAnimal, String tipoVisita, String resultado, double precio) {
         this.idAnimal = idAnimal;
         this.tipoVisita = tipoVisita;
         this.resultado = resultado;

@@ -19,8 +19,7 @@ public class M_Animal {
     public M_Animal() {
     }
 
-    public M_Animal(int id, String nombre, String especie, String DNICuidador) {
-        this.id = id;
+    public M_Animal(String nombre, String especie, String DNICuidador) {
         this.nombre = nombre;
         this.especie = especie;
         this.DNICuidador = DNICuidador;
