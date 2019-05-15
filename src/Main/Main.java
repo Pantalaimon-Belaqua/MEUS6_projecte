@@ -5,10 +5,13 @@
  */
 package Main;
 
+import Modelo.M_Animal;
 import Pers.BDUtil;
+import Pers.AddAnimalDAO;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import utils.GenerateAnimals;
 
 /**
  *
@@ -21,11 +24,23 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        try {
-            BDUtil.createEstructuraMysql();
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ///////////////////////////////////
+        // EJECUTAR SI ES LA PRIMERA VEZ //
+        ///////////////////////////////////
+        
+//        try {
+//            BDUtil.createEstructuraMysql();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
+        M_Animal a1 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a2 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a3 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a4 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a5 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        
+        AddAnimalDAO addAnimalDAO = new AddAnimalDAO();
         
     }
     
