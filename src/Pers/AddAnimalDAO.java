@@ -102,5 +102,6 @@ public class AddAnimalDAO extends BaseDAO {
         // donde el ID se cogerá el objeto recuperado de la base de datos,
         // por lo que no hay que preocuparse por animales con el mismo nombre y especie
         // al crear la relación con su cuidador.
+    }
     
 }
