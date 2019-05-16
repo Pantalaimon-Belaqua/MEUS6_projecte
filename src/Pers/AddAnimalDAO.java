@@ -7,7 +7,10 @@ package Pers;
 
 import Modelo.M_Animal;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -47,7 +50,50 @@ public class AddAnimalDAO extends BaseDAO {
          * No comprovamos que el DNI exista porque el usuario sólo puede escojer DNIs existentes del selectbox
          */
         
+        // Si el animal tiene un cuidador, añade la relación en la tabla animal_cuidador
+        if(animal.getDNICuidador() != null && !animal.getDNICuidador().isEmpty()){
+            query = "INSERT INTO animal_cuidador VALUES (?,?)";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, getAnimalId(animal));
+            stmt.setString(2, animal.getDNICuidador());
+            
+            stmt.executeUpdate();
+            
+            stmt.close();
+            
+        }
+        
         System.out.println("   " + animal.getEspecie() + " añadido");
+    }
+    
+    /**
+     * Devuelve el ID del animal que se le pase
+     * @param animal
+     * @return 
+     */
+    
+    private int getAnimalId(M_Animal animal){
+        String query;
+        ResultSet rs;
+        PreparedStatement stmt;
+        int id = 0;
+        
+        query = "SELECT id FROM Animal WHERE nombre = ? and especie = ?";
+        try {
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, animal.getNombre());
+            stmt.setString(2, animal.getEspecie());
+            rs = stmt.executeQuery();
+            rs.next();
+            
+            id = rs.getInt(1);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(AddAnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return id;
+        
     }
     
 }
