@@ -24,6 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -49,6 +50,14 @@ public class C_Principal {
                 
                 // Oculta la nota del buscador
                 v_principal.notaBuscador.setVisible(false);
+                
+                // Cambiar el tamaño de la primera columna
+                v_principal.tablaAnimales.getColumnModel().getColumn(0).setPreferredWidth(5);
+                
+                // Poner todos los datos tipo String centrados
+                DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+                centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+                v_principal.tablaAnimales.setDefaultRenderer(String.class, centerRenderer);
                 
                 updateTable();
                 
