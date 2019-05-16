@@ -38,9 +38,9 @@ public class C_AddAnimal {
                     nombre = v_addAnimal.input_nombreAnimal.getText();
                     especie = v_addAnimal.input_especie.getText();
 
+                    //m_animal = new M_Animal();
+                    //animalDAO.addAnimal(m_animal);
                 }
-//                m_animal = new M_Animal();
-//                animalDAO.addAnimal(m_animal);
             }
         });
     }
