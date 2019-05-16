@@ -19,13 +19,13 @@ public class GenerateVisit {
     public static String generateType(){
         String[] array = "Enfermedad, Inflamación, Nutrición, Cirujía, Radiografía, Analítica, Checkeo".split(",");
         int choice = random.nextInt(array.length);
-        return array[choice];
+        return array[choice].trim();
     }
     
     public static String generateResult(){
         String[] array = "Bueno, Malo, Necesita tratamiento, Va a morir, Requiere operación".split(",");
         int choice = random.nextInt(array.length);
-        return array[choice];
+        return array[choice].trim();
     }
     
     public static Double generatePrice(){

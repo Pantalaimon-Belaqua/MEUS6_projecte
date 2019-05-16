@@ -22,13 +22,13 @@ public class GeneratePeople {
     public static String generateName(){
         String[] array = "Viki,Toya,Arlene,Gregory,Vennie,Sharla,Sharie,Kiyoko,Vilma,Tempie,Donny,Shaunda,Illa,Dewey,Ping,Evette,Leslie,Kimberley,Gwen,Sharon,Lawerence,Charlotte,Bennie,Kathey,Aaron,Madalene,Hye,Rosamond,Filomena,Lourie,Shery,Luciano,Rolf,Evita,Everett,Taunya,Elton,Elfrieda,Zulma,Tarra,Corrina,Johnie,Tifany,Tiana,Sandi,Chloe,Lavada,Kali,Gemma,Ariana".split(",");
         int choice = random.nextInt(array.length);
-        return array[choice];
+        return array[choice].trim();
     }
     
     public static String generateAddress(){
         String[] array = "Mordor,Granollers,Mercadona,Neverland,Barcelona,Madrid,Edinburgo,Paris,Berlín,Mongolia,Carrefour".split(",");
         int choice = random.nextInt(array.length);
-        return array[choice];
+        return array[choice].trim();
     }
     
     public static int generatePhoneNumber(){
