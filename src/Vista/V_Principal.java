@@ -67,7 +67,6 @@ public class V_Principal extends javax.swing.JFrame {
         });
         tablaAnimales.setToolTipText("");
         tablaAnimales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tablaAnimales.setEnabled(false);
         jScrollPane1.setViewportView(tablaAnimales);
 
         botonAñadir.setText("Añadir");
@@ -90,7 +89,7 @@ public class V_Principal extends javax.swing.JFrame {
         bttn_verCuidador.setText("Ver Cuidador");
         bttn_verCuidador.setToolTipText("");
 
-        bttn_verVisita.setText("jButton1");
+        bttn_verVisita.setText("Ver Visita");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,27 +98,27 @@ public class V_Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(notaBuscador))
-                            .addComponent(titulo))
-                        .addGap(73, 73, 73)
-                        .addComponent(foto_gatito, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonAñadir)
+                        .addGap(41, 41, 41)
+                        .addComponent(bttn_verCuidador)
+                        .addGap(45, 45, 45)
+                        .addComponent(botonEliminar)
+                        .addGap(68, 68, 68)
+                        .addComponent(bttn_verVisita)
+                        .addGap(77, 77, 77)
+                        .addComponent(botonEditar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(botonAñadir)
-                            .addGap(41, 41, 41)
-                            .addComponent(bttn_verCuidador)
-                            .addGap(45, 45, 45)
-                            .addComponent(botonEliminar)
-                            .addGap(68, 68, 68)
-                            .addComponent(bttn_verVisita)
-                            .addGap(77, 77, 77)
-                            .addComponent(botonEditar))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(notaBuscador))
+                                .addComponent(titulo))
+                            .addGap(73, 73, 73)
+                            .addComponent(foto_gatito, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -136,9 +135,9 @@ public class V_Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(notaBuscador, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(buscador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(42, 42, 42)
+                .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEditar)
                     .addComponent(botonEliminar)
