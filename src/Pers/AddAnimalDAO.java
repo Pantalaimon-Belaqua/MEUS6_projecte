@@ -9,6 +9,7 @@ import Modelo.M_Animal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -102,6 +103,32 @@ public class AddAnimalDAO extends BaseDAO {
         // donde el ID se cogerá el objeto recuperado de la base de datos,
         // por lo que no hay que preocuparse por animales con el mismo nombre y especie
         // al crear la relación con su cuidador.
+    }
+    
+    /**
+     * Devuelve una lista con los nombres de los cuidadores
+     * @return 
+     */
+    
+    public ArrayList<String> getCuidadores() throws SQLException{
+        
+        String query;
+        PreparedStatement stmt;
+        ResultSet rs;
+        ArrayList<String> cuidadores = new ArrayList<>();
+        
+        query = "SELECT nombre FROM Cuidador";
+        stmt = conn.prepareStatement(query);
+        rs = stmt.executeQuery();
+        
+        while(rs.next()){
+            cuidadores.add(rs.getString("nombre"));
+        }
+        
+        stmt.close();
+        
+        return cuidadores;
+        
     }
     
 }
