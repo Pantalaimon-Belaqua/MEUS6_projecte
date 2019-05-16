@@ -29,9 +29,16 @@ public class DelAnimalDAO extends BaseDAO {
         String query;
         PreparedStatement stmt;
         
+        // Eliminar primero las entradas en animal_cuidador
+        query = "delete from animal_cuidador where idAnimal = ?;";
+        stmt = conn.prepareStatement(query);
+        stmt.setInt(1, animal.getId());
+        stmt.close();
+        
         query = "DELETE FROM Animal WHERE id=?";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, animal.getId());
+        stmt.close();
         
     }
     
@@ -46,9 +53,17 @@ public class DelAnimalDAO extends BaseDAO {
         String query;
         PreparedStatement stmt;
         
+        // Eliminar primero las entradas en animal_cuidador
+        query = "delete from animal_cuidador where idAnimal = ?;";
+        stmt = conn.prepareStatement(query);
+        stmt.setInt(1, id);
+        stmt.close();
+        
         query = "DELETE FROM Animal WHERE id=?";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, id);
+        
+        stmt.close();
         
     }
     
