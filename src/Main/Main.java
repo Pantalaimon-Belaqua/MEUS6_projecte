@@ -10,7 +10,9 @@ import Modelo.M_Cuidador;
 import Pers.BDUtil;
 import Pers.AddAnimalDAO;
 import Pers.AddCuidadorDAO;
+import Pers.PrincipalDAO;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.GenerateAnimals;
@@ -37,7 +39,9 @@ public class Main {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         
-        BDUtil.insertarDatos();
+//        BDUtil.insertarDatos();
+        
+        
         
         
     }
