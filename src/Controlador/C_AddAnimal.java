@@ -34,34 +34,30 @@ public class C_AddAnimal {
             public void actionPerformed(ActionEvent e) {
                 if (check()) {
                     String nombre, especie;
-                    
+
                     nombre = v_addAnimal.input_nombreAnimal.getText();
                     especie = v_addAnimal.input_especie.getText();
-                    
+
                 }
                 m_animal = new M_Animal();
-
             }
-
         });
-
     }
 
     public boolean check() {
         boolean error = false;
-        
+
         if (v_addAnimal.input_nombreAnimal.getText().isEmpty()) {
             v_addAnimal.input_nombreAnimal.setBackground(Color.red);
             error = true;
-        } else{
+        } else {
             v_addAnimal.input_nombreAnimal.setBackground(Color.WHITE);
         }
-        
 
         if (v_addAnimal.input_especie.getText().isEmpty()) {
             v_addAnimal.input_especie.setBackground(Color.red);
             error = true;
-        }else{
+        } else {
             v_addAnimal.input_especie.setBackground(Color.WHITE);
         }
 
