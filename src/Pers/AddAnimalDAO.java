@@ -67,7 +67,9 @@ public class AddAnimalDAO extends BaseDAO {
     }
     
     /**
-     * Devuelve el ID del animal que se le pase
+     * Devuelve el ID del animal que se le pase.
+     * Devolverá siempre el primero que encuentre en caso de que haya más de uno 
+     * con el mismo nombre y especie.
      * @param animal
      * @return 
      */
@@ -78,7 +80,7 @@ public class AddAnimalDAO extends BaseDAO {
         PreparedStatement stmt;
         int id = 0;
         
-        query = "SELECT id FROM Animal WHERE nombre = ? and especie = ?";
+        query = "SELECT id FROM Animal WHERE nombre = ? and especie = ? limit 1;";
         try {
             stmt = conn.prepareStatement(query);
             stmt.setString(1, animal.getNombre());
@@ -94,6 +96,11 @@ public class AddAnimalDAO extends BaseDAO {
         
         return id;
         
-    }
+    
+        
+        // TODO updateAnimal
+        // donde el ID se cogerá el objeto recuperado de la base de datos,
+        // por lo que no hay que preocuparse por animales con el mismo nombre y especie
+        // al crear la relación con su cuidador.
     
 }
