@@ -5,7 +5,7 @@
  */
 package Pers;
 
-import Modelo.M_Animal;
+import Modelo.M_Cuidador;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -13,61 +13,63 @@ import java.sql.SQLException;
  *
  * @author daniel
  */
-public class DelAnimalDAO extends BaseDAO {
+public class DelCuidadorDAO extends BaseDAO {
 
-    public DelAnimalDAO() {
+    public DelCuidadorDAO() {
         connect();
     }
     
     /**
-     * Elimina un animal por su objeto
-     * @param animal 
+     * Elimina a un cuidador por su objeto
+     * @param cuidador
+     * @throws SQLException 
      */
     
-    public void deleteAnimal(M_Animal animal) throws SQLException{
+    public void deleteCuidador(M_Cuidador cuidador) throws SQLException{
         
         String query;
         PreparedStatement stmt;
         
-        // Eliminar primero las entradas en animal_cuidador
-        query = "delete from animal_cuidador where idAnimal = ?;";
+        // Eliminar las entradas de animal_cuidador
+        query = "DELETE FROM animal_cuidador WHERE DNI = ?;";
         stmt = conn.prepareStatement(query);
-        stmt.setInt(1, animal.getId());
+        stmt.setString(1, cuidador.getDNI());
         stmt.executeUpdate();
         stmt.close();
         
-        query = "DELETE FROM Animal WHERE id=?";
+        query = "DELETE FROM Cuidador WHERE DNI = ?;";
         stmt = conn.prepareStatement(query);
-        stmt.setInt(1, animal.getId());
+        stmt.setString(1, cuidador.getDNI());
         stmt.executeUpdate();
         stmt.close();
         
     }
     
     /**
-     * Elimina un animal por su ID
-     * @param animal
+     * Elimina a un cuidador por su DNI
+     * @param DNI
      * @throws SQLException 
      */
     
-    public void deleteAnimal(int id) throws SQLException{
+    public void deleteCuidador(String DNI) throws SQLException{
         
         String query;
         PreparedStatement stmt;
         
-        // Eliminar primero las entradas en animal_cuidador
-        query = "delete from animal_cuidador where idAnimal = ?;";
+        // Eliminar las entradas de animal_cuidador
+        query = "DELETE FROM animal_cuidador WHERE DNI = ?;";
         stmt = conn.prepareStatement(query);
-        stmt.setInt(1, id);
+        stmt.setString(1, DNI);
         stmt.executeUpdate();
         stmt.close();
         
-        query = "DELETE FROM Animal WHERE id=?";
+        query = "DELETE FROM Cuidador WHERE DNI = ?;";
         stmt = conn.prepareStatement(query);
-        stmt.setInt(1, id);
+        stmt.setString(1, DNI);
         stmt.executeUpdate();
         stmt.close();
         
     }
+    
     
 }
