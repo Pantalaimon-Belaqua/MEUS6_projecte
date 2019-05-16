@@ -102,7 +102,7 @@ public class C_Principal {
                     // Coger el modelo de la tabla
                     TableModel model = v_principal.tablaProductos.getModel();
                     
-                    // Filtar por la palabra "Juguete"
+                    // Filtar por la palabra buscada
                     TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
                     sorter.setRowFilter(RowFilter.regexFilter(texto));
                     v_principal.tablaProductos.setRowSorter(sorter);
