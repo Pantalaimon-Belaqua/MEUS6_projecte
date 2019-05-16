@@ -50,30 +50,8 @@ public class C_Principal {
                 // Oculta la nota del buscador
                 v_principal.notaBuscador.setVisible(false);
                 
-                // Borra todas las filas de la tabla (por si acaso)
-                DefaultTableModel model = (DefaultTableModel) v_principal.tablaAnimales.getModel();
-                int nRows = model.getRowCount();
-                for (int i = nRows - 1; i >= 0; i--) {
-                    model.removeRow(i);
-                }
+                updateTable();
                 
-                try {
-                    // Recoge la lista de productos de la BBDD
-                    ArrayList<M_Animal> animales = principalDAO.getAnimales();
-                    
-                    // Añade las filas a la tabla
-                    for (M_Animal animal : animales) {
-                        
-                        /***
-                         * Añadir las cosas en orden del arraylist al row
-                         */
-                        
-                        model.addRow(new Object[]{animal.getId(), animal.getNombre(), animal.getEspecie()});
-                    }
-                    
-                } catch (SQLException ex) {
-                    Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
             }
             
             // Cuando se cierra la ventana, desconectar de la BBDD
@@ -139,25 +117,67 @@ public class C_Principal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 V_AddAnimal v_addAnimal = new V_AddAnimal();
-                C_AddAnimal c_addProducto = new C_AddAnimal(v_addAnimal);
+                // C_AddAnimal c_addProducto = new C_AddAnimal(v_addAnimal);
                 v_addAnimal.setVisible(true);
             }
         });
         
-        // Al pulsar eliminar
+        // Al pulsar eliminar, coger el id del animal seleccionado y borrarlo
         this.v_principal.botonEliminar.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                V_Eliminar v_eliminar = new V_Eliminar();
-                C_Eliminar c_eliminar = new C_Eliminar(v_eliminar);
-                v_eliminar.setVisible(true);
+                int fila = v_principal.tablaAnimales.getSelectedRow();
+                int id = (int) v_principal.tablaAnimales.getValueAt(fila, 0);
+                
+                try {
+                    principalDAO.deleteAnimal(id);
+                } catch (SQLException ex) {
+                    Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                // Refrescar la tabla
+                updateTable();
             }
         });
         
         // Poner la ventana al medio
         v_principal.setLocationRelativeTo(null);
         
+    }
+    
+    /**
+     * Actualiza la tabla
+     */
+    
+    private void updateTable(){
+        
+        // Borra todas las filas de la tabla (por si acaso)
+        DefaultTableModel model = (DefaultTableModel) v_principal.tablaAnimales.getModel();
+        int nRows = model.getRowCount();
+        for (int i = nRows - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+                
+                
+        
+        try {
+            // Recoge la lista de productos de la BBDD
+            ArrayList<M_Animal> animales = principalDAO.getAnimales();
+
+            // Añade las filas a la tabla
+            for (M_Animal animal : animales) {
+
+                /***
+                 * Añadir las cosas en orden del arraylist al row
+                 */
+
+                model.addRow(new Object[]{animal.getId(), animal.getNombre(), animal.getEspecie()});
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
