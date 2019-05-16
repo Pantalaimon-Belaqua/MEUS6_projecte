@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.M_Animal;
 import Pers.BaseDAO;
 import Pers.PrincipalDAO;
 import Vista.V_Principal;
@@ -57,7 +58,7 @@ public class C_Principal {
                 
                 try {
                     // Recoge la lista de productos de la BBDD
-                    ArrayList<M_Animal> animales = principalDAO.getProducts();
+                    ArrayList<M_Animal> animales = principalDAO.getAnimales();
                     
                     // Añade las filas a la tabla
                     for (M_Animal animal : animales) {
@@ -66,9 +67,7 @@ public class C_Principal {
                          * Añadir las cosas en orden del arraylist al row
                          */
                         
-                        model.addRow(new Object[]{producto.getCode(), producto.getDescripcion(), 
-                            producto.getCategoria(), producto.getPrecio(), producto.getUbicacion(), 
-                            producto.getTipo(), producto.getOferta()});
+                        model.addRow(new Object[]{ /*VALUE FOR EACH ROW*/ });
                     }
                     
                 } catch (SQLException ex) {
@@ -89,110 +88,6 @@ public class C_Principal {
             
             
             
-        });
-        
-        // Filtrar por juguetes
-        this.v_principal.catJuguete.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                // Está el checkbox seleccionado?
-                boolean isChecked = v_principal.catJuguete.isSelected();
-                
-                if(isChecked){
-                    
-                    // Coger el modelo de la tabla
-                    TableModel model = v_principal.tablaProductos.getModel();
-                    
-                    // Filtar por la palabra "Juguete"
-                    TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-                    sorter.setRowFilter(RowFilter.regexFilter("Juguete"));
-                    v_principal.tablaProductos.setRowSorter(sorter);
-                    
-                } else {
-                    v_principal.tablaProductos.setRowSorter(null);
-                }
-                
-            }
-        });
-        
-        // Filtrar por electronica
-        this.v_principal.catElectronica.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                // Está el checkbox seleccionado?
-                boolean isChecked = v_principal.catElectronica.isSelected();
-                
-                if(isChecked){
-                    
-                    // Coger el modelo de la tabla
-                    TableModel model = v_principal.tablaProductos.getModel();
-                    
-                    // Filtar por la palabra "Juguete"
-                    TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-                    sorter.setRowFilter(RowFilter.regexFilter("Electrónica"));
-                    v_principal.tablaProductos.setRowSorter(sorter);
-                    
-                } else {
-                    v_principal.tablaProductos.setRowSorter(null);
-                }
-                
-            }
-        });
-        
-        // Filtrar por ropa
-        this.v_principal.catRopa.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-           
-                // Está el checkbox seleccionado?
-                boolean isChecked = v_principal.catRopa.isSelected();
-                
-                if(isChecked){
-                    
-                    // Coger el modelo de la tabla
-                    TableModel model = v_principal.tablaProductos.getModel();
-                    
-                    // Filtar por la palabra "Juguete"
-                    TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-                    sorter.setRowFilter(RowFilter.regexFilter("Ropa"));
-                    v_principal.tablaProductos.setRowSorter(sorter);
-                    
-                } else {
-                    v_principal.tablaProductos.setRowSorter(null);
-                }
-                
-            }
-        });
-        
-        // Filtrar por cocina
-        this.v_principal.catCocina.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                // Está el checkbox seleccionado?
-                boolean isChecked = v_principal.catCocina.isSelected();
-                
-                if(isChecked){
-                    
-                    // Coger el modelo de la tabla
-                    TableModel model = v_principal.tablaProductos.getModel();
-                    
-                    // Filtar por la palabra "Juguete"
-                    TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-                    sorter.setRowFilter(RowFilter.regexFilter("Cocina"));
-                    v_principal.tablaProductos.setRowSorter(sorter);
-                    
-                } else {
-                    v_principal.tablaProductos.setRowSorter(null);
-                }
-                
-            }
         });
         
         // Buscar
