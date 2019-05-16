@@ -55,7 +55,7 @@ public class V_AddAnimal extends javax.swing.JFrame {
         getContentPane().add(input_nombreAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 124, -1));
 
         bttn_addAnimal.setText("Enviar");
-        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 70, 40));
+        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 80, 40));
 
         jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Nombre");
