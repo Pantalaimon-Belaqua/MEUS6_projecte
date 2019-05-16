@@ -50,7 +50,7 @@ public class C_Principal {
                 v_principal.notaBuscador.setVisible(false);
                 
                 // Borra todas las filas de la tabla (por si acaso)
-                DefaultTableModel model = (DefaultTableModel) v_principal.tablaProductos.getModel();
+                DefaultTableModel model = (DefaultTableModel) v_principal.tablaAnimales.getModel();
                 int nRows = model.getRowCount();
                 for (int i = nRows - 1; i >= 0; i--) {
                     model.removeRow(i);
@@ -100,14 +100,14 @@ public class C_Principal {
                 
                 if(!texto.isEmpty()){
                     // Coger el modelo de la tabla
-                    TableModel model = v_principal.tablaProductos.getModel();
+                    TableModel model = v_principal.tablaAnimales.getModel();
                     
                     // Filtar por la palabra buscada
                     TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
                     sorter.setRowFilter(RowFilter.regexFilter(texto));
-                    v_principal.tablaProductos.setRowSorter(sorter);
+                    v_principal.tablaAnimales.setRowSorter(sorter);
                 } else {
-                    v_principal.tablaProductos.setRowSorter(null);
+                    v_principal.tablaAnimales.setRowSorter(null);
                 }
                 
             }

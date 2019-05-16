@@ -28,7 +28,7 @@ public class V_Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaProductos = new javax.swing.JTable();
+        tablaAnimales = new javax.swing.JTable();
         botonAñadir = new javax.swing.JButton();
         botonEliminar = new javax.swing.JButton();
         botonEditar = new javax.swing.JButton();
@@ -40,7 +40,7 @@ public class V_Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAnimales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -56,10 +56,10 @@ public class V_Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tablaProductos.setToolTipText("");
-        tablaProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tablaProductos.setEnabled(false);
-        jScrollPane1.setViewportView(tablaProductos);
+        tablaAnimales.setToolTipText("");
+        tablaAnimales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaAnimales.setEnabled(false);
+        jScrollPane1.setViewportView(tablaAnimales);
 
         botonAñadir.setText("Añadir");
 
@@ -169,13 +169,13 @@ public class V_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton botonAñadir;
-    private javax.swing.JButton botonEditar;
+    public javax.swing.JButton botonEditar;
     public javax.swing.JButton botonEliminar;
     public javax.swing.JTextField buscador;
     private javax.swing.JLabel foto_gatito;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel notaBuscador;
-    public javax.swing.JTable tablaProductos;
+    public javax.swing.JTable tablaAnimales;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }

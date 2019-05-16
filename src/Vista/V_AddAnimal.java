@@ -40,21 +40,22 @@ public class V_AddAnimal extends javax.swing.JFrame {
         jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Especie");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
 
         input_nombreAnimal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_nombreAnimal1ActionPerformed(evt);
             }
         });
-        getContentPane().add(input_nombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 124, -1));
+        getContentPane().add(input_nombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 124, -1));
 
         bttn_addAnimal.setText("Enviar");
-        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
+        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 70, 40));
 
         jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Nombre");
@@ -62,17 +63,17 @@ public class V_AddAnimal extends javax.swing.JFrame {
 
         jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Cuidador");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
 
         select_cuidador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ninguno" }));
-        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, -1, -1));
+        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
 
         input_especie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_especieActionPerformed(evt);
             }
         });
-        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 124, -1));
+        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 124, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoanimal03_opt.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 400));
