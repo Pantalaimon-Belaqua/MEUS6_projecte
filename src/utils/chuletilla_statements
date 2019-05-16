@@ -1,8 +1,10 @@
 Eso es para hacer copiar-pegar al Workbench y no tener que pensar cada query cada vez.
 
-SELECIONAR LOS ANIMALES CON SUS CUIDADORES
-select a.nombre, a.especie, c.nombre, c.telefono
+SELECCIONAR LOS ANIMALES CON SUS CUIDADORES
+select a.id, a.nombre, a.especie, c.DNI, c.nombre, c.direccion, c.telefono
 	from Animal a
 	inner join animal_cuidador ac on ac.idAnimal=a.id
         inner join Cuidador c on ac.DNICuidador=c.DNI;
 
+SELECCIONAR LOS ANIMALES QUE TIENEN O NO CUIDADOR
+select a.id, a.nombre, a.especie, c.DNI, c.nombre, c.direccion, c.telefono from Animal a left join animal_cuidador ac on ac.idAnimal=a.id left join Cuidador c on ac.DNICuidador=c.DNI;
