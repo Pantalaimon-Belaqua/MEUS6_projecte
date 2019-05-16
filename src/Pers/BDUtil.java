@@ -5,12 +5,17 @@
  */
 package Pers;
 
+import Main.Main;
+import Modelo.M_Animal;
+import Modelo.M_Cuidador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Pers.BaseDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import utils.GenerateAnimals;
+import utils.GeneratePeople;
 
 /**
  *
@@ -77,48 +82,56 @@ public class BDUtil {
     }
     
     public static void insertarDatos(){
-        BaseDAO.connect();
-        Connection conn = BaseDAO.getConn();
+            
+        AddAnimalDAO addAnimalDAO = new AddAnimalDAO();
+        AddCuidadorDAO addCuidadorDAO = new AddCuidadorDAO();
         
+        // Crear animales
+        M_Animal a1 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a2 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a3 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a4 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a5 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+        M_Animal a6 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
         
+        // Crear cuidadores
+        M_Cuidador c1 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+        M_Cuidador c2 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+        M_Cuidador c3 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+        M_Cuidador c4 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+        M_Cuidador c5 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+        
+        // Crer animales con cuidadores
+        M_Animal a7 = new M_Animal("A7", GenerateAnimals.generateSpecies(), c1.getDNI());
+        M_Animal a8 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), c1.getDNI());
+        M_Animal a9 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), c2.getDNI());
         
         try {
-            String query = "INSERT INTO Categoria(categoria) VALUES (\"Juguete\")";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
+
+            // Añadir cuidadores
+            // Hay que añadirlos antes que los animales de otro modo no se podrá crear la relación
+            // ya que el DNI no existirá.
+            addCuidadorDAO.addCuidador(c1);
+            addCuidadorDAO.addCuidador(c2);
+            addCuidadorDAO.addCuidador(c3);
+            addCuidadorDAO.addCuidador(c4);
+            addCuidadorDAO.addCuidador(c5);            
             
-            query = "INSERT INTO Categoria(categoria) VALUES (\"Electrónica\")";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
+            // Añadir animales
+            addAnimalDAO.addAnimal(a1);
+            addAnimalDAO.addAnimal(a2);
+            addAnimalDAO.addAnimal(a3);
+            addAnimalDAO.addAnimal(a4);
+            addAnimalDAO.addAnimal(a5);
+            addAnimalDAO.addAnimal(a6);
+            addAnimalDAO.addAnimal(a7);
+            addAnimalDAO.addAnimal(a8);
+            addAnimalDAO.addAnimal(a9);
             
-            query = "INSERT INTO Categoria(categoria) VALUES (\"Cocina\")";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
             
-            query = "INSERT INTO Categoria(categoria) VALUES (\"Ropa\")";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
-            
-            query = "INSERT INTO Producto VALUES (1, \"Un juguete\", 1, 3.4, \"LEL\", \"Tipo1\", 0.20)";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
-            
-            query = "INSERT INTO Producto VALUES (2, \"Un ordenador\", 2, 50.6, \"LEL\", \"Tipo2\", 0.30)";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
-            
-            query = "INSERT INTO Producto VALUES (3, \"Un batidor\", 3, 5.6, \"LEL\", \"Tipo3\", 0.05)";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
-            
-            query = "INSERT INTO Producto VALUES (4, \"Un pantalón\", 4, 20.1, \"LEL\", \"Tipo4\", 0.15)";
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();
-            
-            stmt.close();
         } catch (SQLException ex) {
-            Logger.getLogger(BDUtil.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        };
     }
 
     public static void netejaTaules() {
