@@ -36,6 +36,8 @@ public class V_Principal extends javax.swing.JFrame {
         notaBuscador = new javax.swing.JLabel();
         foto_gatito = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
+        bttn_verCuidador = new javax.swing.JButton();
+        bttn_verVisita = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -45,15 +47,22 @@ public class V_Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Código", "Descrip", "Categoría", "Precio", "Ubicación", "Tipo", "Oferta"
+                "ID", "Nombre", "Especie"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         tablaAnimales.setToolTipText("");
@@ -78,6 +87,11 @@ public class V_Principal extends javax.swing.JFrame {
         titulo.setForeground(new java.awt.Color(39, 202, 177));
         titulo.setText("CENTRO DE ACOGIDA");
 
+        bttn_verCuidador.setText("Ver Cuidador");
+        bttn_verCuidador.setToolTipText("");
+
+        bttn_verVisita.setText("jButton1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,9 +111,13 @@ public class V_Principal extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(botonAñadir)
-                            .addGap(158, 158, 158)
+                            .addGap(41, 41, 41)
+                            .addComponent(bttn_verCuidador)
+                            .addGap(45, 45, 45)
                             .addComponent(botonEliminar)
-                            .addGap(217, 217, 217)
+                            .addGap(68, 68, 68)
+                            .addComponent(bttn_verVisita)
+                            .addGap(77, 77, 77)
                             .addComponent(botonEditar))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -124,7 +142,9 @@ public class V_Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonEditar)
                     .addComponent(botonEliminar)
-                    .addComponent(botonAñadir))
+                    .addComponent(botonAñadir)
+                    .addComponent(bttn_verCuidador)
+                    .addComponent(bttn_verVisita))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
@@ -171,6 +191,8 @@ public class V_Principal extends javax.swing.JFrame {
     public javax.swing.JButton botonAñadir;
     public javax.swing.JButton botonEditar;
     public javax.swing.JButton botonEliminar;
+    public javax.swing.JButton bttn_verCuidador;
+    public javax.swing.JButton bttn_verVisita;
     public javax.swing.JTextField buscador;
     private javax.swing.JLabel foto_gatito;
     private javax.swing.JScrollPane jScrollPane1;

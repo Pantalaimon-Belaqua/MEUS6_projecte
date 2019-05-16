@@ -42,9 +42,13 @@
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="botonAñadir" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="bttn_verCuidador" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="botonEliminar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="bttn_verVisita" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Component id="botonEditar" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" min="-2" pref="551" max="-2" attributes="0"/>
@@ -79,6 +83,8 @@
                   <Component id="botonEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonAñadir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bttn_verCuidador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bttn_verVisita" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="48" max="32767" attributes="0"/>
           </Group>
@@ -96,14 +102,10 @@
         <Component class="javax.swing.JTable" name="tablaAnimales">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="0">
-                <Column editable="true" title="C&#xf3;digo" type="java.lang.Integer"/>
-                <Column editable="true" title="Descrip" type="java.lang.String"/>
-                <Column editable="true" title="Categor&#xed;a" type="java.lang.String"/>
-                <Column editable="true" title="Precio" type="java.lang.Double"/>
-                <Column editable="true" title="Ubicaci&#xf3;n" type="java.lang.String"/>
-                <Column editable="true" title="Tipo" type="java.lang.String"/>
-                <Column editable="true" title="Oferta" type="java.lang.Double"/>
+              <Table columnCount="3" rowCount="0">
+                <Column editable="false" title="ID" type="java.lang.Integer"/>
+                <Column editable="false" title="Nombre" type="java.lang.String"/>
+                <Column editable="false" title="Especie" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -176,6 +178,23 @@
         </Property>
         <Property name="text" type="java.lang.String" value="CENTRO DE ACOGIDA"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bttn_verCuidador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver Cuidador"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="bttn_verVisita">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
