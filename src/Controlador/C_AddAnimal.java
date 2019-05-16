@@ -39,7 +39,8 @@ public class C_AddAnimal {
                     especie = v_addAnimal.input_especie.getText();
 
                 }
-                m_animal = new M_Animal();
+//                m_animal = new M_Animal();
+//                animalDAO.addAnimal(m_animal);
             }
         });
     }
