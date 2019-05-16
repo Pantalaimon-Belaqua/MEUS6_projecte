@@ -29,7 +29,7 @@ public class V_AddAnimal extends javax.swing.JFrame {
 
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        input_nombreAnimal1 = new javax.swing.JTextField();
+        input_nombreAnimal = new javax.swing.JTextField();
         bttn_addAnimal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,12 +47,12 @@ public class V_AddAnimal extends javax.swing.JFrame {
         jLabel2.setText("Especie");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
 
-        input_nombreAnimal1.addActionListener(new java.awt.event.ActionListener() {
+        input_nombreAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                input_nombreAnimal1ActionPerformed(evt);
+                input_nombreAnimalActionPerformed(evt);
             }
         });
-        getContentPane().add(input_nombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 124, -1));
+        getContentPane().add(input_nombreAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 124, -1));
 
         bttn_addAnimal.setText("Enviar");
         getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 70, 40));
@@ -81,9 +81,9 @@ public class V_AddAnimal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void input_nombreAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreAnimal1ActionPerformed
+    private void input_nombreAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_nombreAnimal1ActionPerformed
+    }//GEN-LAST:event_input_nombreAnimalActionPerformed
 
     private void input_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_especieActionPerformed
         // TODO add your handling code here:
@@ -127,7 +127,7 @@ public class V_AddAnimal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton bttn_addAnimal;
     public javax.swing.JTextField input_especie;
-    public javax.swing.JTextField input_nombreAnimal1;
+    public javax.swing.JTextField input_nombreAnimal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
