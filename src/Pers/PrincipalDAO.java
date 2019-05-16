@@ -22,21 +22,30 @@ public class PrincipalDAO extends BaseDAO {
         connect();
     }
     
+    /**
+     * Devuelve un arraylist con todos los animales
+     * @return
+     * @throws SQLException 
+     */
+    
     public ArrayList getAnimales() throws SQLException{
         ArrayList<M_Animal> animales = new ArrayList<M_Animal>();
         
         ResultSet rs; // Guardará el resultado de la query
-        String query = "select p.code, p.descripcion, c.categoria, p.precio, p.ubicacion, p.tipo, p.oferta from Producto p\n" +
-"	inner join Categoria c on c.code=p.categoria";
+        String query = "select a.id, a.nombre, a.especie, c.DNI, c.nombre, c.direccion, c.telefono from Animal a left join animal_cuidador ac on ac.idAnimal=a.id left join Cuidador c on ac.DNICuidador=c.DNI;";
         PreparedStatement stmt = conn.prepareStatement(query);
-        rs = stmt.executeQuery(); // Conseguir los datos de todos los productos
+        rs = stmt.executeQuery(); // Conseguir los datos de todos los animales
         
         // Mientras haya animales
         while(rs.next()){
             
-            M_Animal m_animal = new M_Animal();
+            M_Animal animal = new M_Animal();
+            animal.setId(rs.getInt("id"));
+            animal.setNombre(rs.getString("nombre"));
+            animal.setEspecie(rs.getString("especie"));
+            animal.setDNICuidador(rs.getString("DNI"));
             
-            
+            animales.add(animal);
         }
         rs.close();
         stmt.close();
