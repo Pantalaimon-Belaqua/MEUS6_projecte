@@ -5,12 +5,14 @@
  */
 package Main;
 
+import Controlador.C_Principal;
 import Modelo.M_Animal;
 import Modelo.M_Cuidador;
 import Pers.BDUtil;
 import Pers.AddAnimalDAO;
 import Pers.AddCuidadorDAO;
 import Pers.PrincipalDAO;
+import Vista.V_Principal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -41,7 +43,9 @@ public class Main {
         
 //        BDUtil.insertarDatos();
         
-        
+        V_Principal v_principal = new V_Principal();
+        C_Principal c_principal = new C_Principal(v_principal);
+        v_principal.setVisible(true);
         
         
     }

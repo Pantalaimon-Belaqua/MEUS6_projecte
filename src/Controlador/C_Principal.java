@@ -8,6 +8,7 @@ package Controlador;
 import Modelo.M_Animal;
 import Pers.BaseDAO;
 import Pers.PrincipalDAO;
+import Vista.V_AddAnimal;
 import Vista.V_Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,7 +68,7 @@ public class C_Principal {
                          * Añadir las cosas en orden del arraylist al row
                          */
                         
-                        model.addRow(new Object[]{ /*VALUE FOR EACH ROW*/ });
+                        model.addRow(new Object[]{animal.getId(), animal.getNombre(), animal.getEspecie()});
                     }
                     
                 } catch (SQLException ex) {
@@ -137,9 +138,9 @@ public class C_Principal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                V_addProducto v_addProducto = new V_addProducto();
-                C_addProducto c_addProducto = new C_addProducto(v_addProducto);
-                v_addProducto.setVisible(true);
+                V_AddAnimal v_addAnimal = new V_AddAnimal();
+                C_AddAnimal c_addProducto = new C_AddAnimal(v_addAnimal);
+                v_addAnimal.setVisible(true);
             }
         });
         
