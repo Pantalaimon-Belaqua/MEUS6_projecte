@@ -1,0 +1,8 @@
+Eso es para hacer copiar-pegar al Workbench y no tener que pensar cada query cada vez.
+
+SELECIONAR LOS ANIMALES CON SUS CUIDADORES
+select a.nombre, a.especie, c.nombre, c.telefono
+	from Animal a
+	inner join animal_cuidador ac on ac.idAnimal=a.id
+        inner join Cuidador c on ac.DNICuidador=c.DNI;
+
