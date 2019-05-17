@@ -167,12 +167,13 @@ public class C_AddCuidador {
             v_addCuidador.input_direccion.setBackground(Color.white);
         }
         
-        if (v_addCuidador.input_) {
-            
+        if (v_addCuidador.input_telefono.getText().isEmpty()) {
+            v_addCuidador.input_telefono.setBackground(Color.red);
+            error = true;
+        }else{
+            v_addCuidador.input_telefono.setBackground(Color.white);
         }
-        
-        
+                
         return error;
     }
-
 }
