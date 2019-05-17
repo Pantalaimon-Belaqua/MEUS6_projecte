@@ -43,7 +43,7 @@ public class V_EditAnimal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new Color(213, 134, 145, 123));
+        jPanel2.setBackground(new Color(255f, 255f, 255f, 0.5f));
         jPanel2.setForeground(new Color(255,255,255, 160));
         jPanel2.setEnabled(false);
 
