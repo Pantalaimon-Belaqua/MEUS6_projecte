@@ -9,6 +9,7 @@ import Modelo.M_Animal;
 import Pers.BaseDAO;
 import Pers.PrincipalDAO;
 import Vista.V_AddAnimal;
+import Vista.V_OptionAdd;
 import Vista.V_Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -125,9 +126,9 @@ public class C_Principal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                V_AddAnimal v_addAnimal = new V_AddAnimal();
-                C_AddAnimal c_addProducto = new C_AddAnimal(v_addAnimal);
-                v_addAnimal.setVisible(true);
+                V_OptionAdd v_optionAdd = new V_OptionAdd();
+                C_OptionAdd c_optionAdd = new C_OptionAdd(v_optionAdd);
+                v_optionAdd.setVisible(true);
             }
         });
         

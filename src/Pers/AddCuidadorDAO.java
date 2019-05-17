@@ -30,7 +30,7 @@ public class AddCuidadorDAO extends BaseDAO {
         stmt.setString(1, cuidador.getDNI());
         stmt.setString(2, cuidador.getNombre());
         stmt.setString(3, cuidador.getDireccion());
-        stmt.setString(4, cuidador.getDireccion());
+        stmt.setString(4, cuidador.getTelefono());
         stmt.executeUpdate();
         
         stmt.close();

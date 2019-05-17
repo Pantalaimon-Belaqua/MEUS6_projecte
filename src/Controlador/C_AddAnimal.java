@@ -104,8 +104,8 @@ public class C_AddAnimal {
                     M_Animal m_animal = new M_Animal();
 
                     // Coger lo que haya puesto el usuario
-                    nombre = v_addAnimal.input_nombreAnimal.getText();
-                    especie = v_addAnimal.input_especie.getText();
+                    nombre = v_addAnimal.input_nombreAnimal.getText().trim();
+                    especie = v_addAnimal.input_especie.getText().trim();
                     DNI = (String) v_addAnimal.select_cuidador.getSelectedItem();
 
                     // Si el cuidador es Ninguno, lo intertarás en la BBDD como Null

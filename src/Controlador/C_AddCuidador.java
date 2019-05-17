@@ -45,14 +45,13 @@ public class C_AddCuidador {
 
         });
 
-        //Al escribir el dni
+        //Al escribir en dni
         this.v_addCuidador.input_dni.addKeyListener(new KeyAdapter() {
 
             @Override
             public void keyReleased(KeyEvent e) {
 
-                if (!v_addCuidador.input_dni.getText().isEmpty() || v_addCuidador.input_nombreCuidador.getText().isEmpty()
-                        || v_addCuidador.input_direccion.getText().isEmpty() || v_addCuidador.input_telefono.getText().isEmpty()) {
+                if (allInputsFull()) {
                     v_addCuidador.bttn_addCuidador.setEnabled(true);
                 } else {
                     v_addCuidador.bttn_addCuidador.setEnabled(false);
@@ -60,14 +59,13 @@ public class C_AddCuidador {
             }
         });
 
-        //Al escribir el nombre
+        //Al escribir en nombre
         this.v_addCuidador.input_nombreCuidador.addKeyListener(new KeyAdapter() {
 
             @Override
             public void keyReleased(KeyEvent e) {
 
-                if (!v_addCuidador.input_dni.getText().isEmpty() || v_addCuidador.input_nombreCuidador.getText().isEmpty()
-                        || v_addCuidador.input_direccion.getText().isEmpty() || v_addCuidador.input_telefono.getText().isEmpty()) {
+                if (allInputsFull()) {
                     v_addCuidador.bttn_addCuidador.setEnabled(true);
                 } else {
                     v_addCuidador.bttn_addCuidador.setEnabled(false);
@@ -81,8 +79,7 @@ public class C_AddCuidador {
             @Override
             public void keyReleased(KeyEvent e) {
 
-                if (!v_addCuidador.input_dni.getText().isEmpty() || v_addCuidador.input_nombreCuidador.getText().isEmpty()
-                        || v_addCuidador.input_direccion.getText().isEmpty() || v_addCuidador.input_telefono.getText().isEmpty()) {
+                if (allInputsFull()) {
                     v_addCuidador.bttn_addCuidador.setEnabled(true);
                 } else {
                     v_addCuidador.bttn_addCuidador.setEnabled(false);
@@ -96,8 +93,7 @@ public class C_AddCuidador {
             @Override
             public void keyReleased(KeyEvent e) {
 
-                if (!v_addCuidador.input_dni.getText().isEmpty() || v_addCuidador.input_nombreCuidador.getText().isEmpty()
-                        || v_addCuidador.input_direccion.getText().isEmpty() || v_addCuidador.input_telefono.getText().isEmpty()) {
+                if (allInputsFull()) {
                     v_addCuidador.bttn_addCuidador.setEnabled(true);
                 } else {
                     v_addCuidador.bttn_addCuidador.setEnabled(false);
@@ -112,19 +108,19 @@ public class C_AddCuidador {
             public void actionPerformed(ActionEvent e) {
                 if (!check()) {
                     String dni, nombre, direccion, telefono;
-                    M_Cuidador m_Cuidador = new M_Cuidador();
+                    M_Cuidador m_cuidador = new M_Cuidador();
 
                     // Coger los datos que haya puesto el usuario.
-                    dni = v_addCuidador.input_dni.getText();
-                    nombre = v_addCuidador.input_nombreCuidador.getText();
-                    direccion = v_addCuidador.input_direccion.getText();
-                    telefono = v_addCuidador.input_telefono.getText();
+                    dni = v_addCuidador.input_dni.getText().trim().toUpperCase();
+                    nombre = v_addCuidador.input_nombreCuidador.getText().trim();
+                    direccion = v_addCuidador.input_direccion.getText().trim();
+                    telefono = v_addCuidador.input_telefono.getText().trim();
 
                     // Añadir los datos al objeto al Cuidador
-                    m_Cuidador.setDNI(dni);
-                    m_Cuidador.setNombre(nombre);
-                    m_Cuidador.setDireccion(direccion);
-                    m_Cuidador.setTelefono(telefono);
+                    m_cuidador.setDNI(dni);
+                    m_cuidador.setNombre(nombre);
+                    m_cuidador.setDireccion(direccion);
+                    m_cuidador.setTelefono(telefono);
 
                     // Añadir el cuidador a la BBDD.
                     try {
@@ -143,16 +139,25 @@ public class C_AddCuidador {
         v_addCuidador.setLocationRelativeTo(null);
     }
 
-    public boolean check() {
+    private boolean check() {
         boolean error = false;
 
+        // DNI
         if (v_addCuidador.input_dni.getText().length() > 9 || v_addCuidador.input_dni.getText().isEmpty()) {
+            
             v_addCuidador.input_dni.setBackground(Color.red);
             error = true;
         }else{
-            v_addCuidador.input_dni.setBackground(Color.white);
+            if(isDNIRight(v_addCuidador.input_dni.getText())){
+                v_addCuidador.input_dni.setBackground(Color.white);
+            } else {
+                v_addCuidador.input_dni.setBackground(Color.red);
+                error = true;
+            }
+            
         }
 
+        //NOMBRE
         if (v_addCuidador.input_nombreCuidador.getText().isEmpty()) {
             v_addCuidador.input_nombreCuidador.setBackground(Color.red);
             error = true;
@@ -160,6 +165,7 @@ public class C_AddCuidador {
             v_addCuidador.input_nombreCuidador.setBackground(Color.white);
         }
         
+        // DIRECCIÓN
         if (v_addCuidador.input_direccion.getText().isEmpty()) {
             v_addCuidador.input_direccion.setBackground(Color.red);
             error = true;
@@ -167,13 +173,44 @@ public class C_AddCuidador {
             v_addCuidador.input_direccion.setBackground(Color.white);
         }
         
+        // TELÉFONO
         if (v_addCuidador.input_telefono.getText().isEmpty()) {
             v_addCuidador.input_telefono.setBackground(Color.red);
             error = true;
         }else{
-            v_addCuidador.input_telefono.setBackground(Color.white);
+            
+            try {
+                String tel = v_addCuidador.input_telefono.getText().trim();
+                int _ = Integer.parseInt(tel);
+            } catch (NumberFormatException e) {
+                error = true;
+                v_addCuidador.input_telefono.setBackground(Color.red);
+            }
+            
+            
         }
                 
         return error;
+    }
+    
+    private boolean allInputsFull(){
+        if(!v_addCuidador.input_dni.getText().isEmpty() || v_addCuidador.input_nombreCuidador.getText().isEmpty()
+                        || v_addCuidador.input_direccion.getText().isEmpty() || v_addCuidador.input_telefono.getText().isEmpty()){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    private boolean isDNIRight(String DNI){
+        String[] letters = "T,R,W,A,G,M,Y,F,P,D,X,B,N,J,Z,S,Q,V,H,L,C,K,E".split(",");
+        
+        
+        // Si la letra del DNI es la que debería ser
+        if(letters[Integer.parseInt(DNI.substring(0, DNI.length()-1))%23].equals(DNI.substring(DNI.length()-1).toUpperCase())){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
