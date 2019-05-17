@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author noelia
@@ -71,7 +73,11 @@ public class V_EditAnimal extends javax.swing.JFrame {
         getContentPane().add(combo_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
 
         bttn_modificar.setText("Modificar");
-        getContentPane().add(bttn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 90, 30));
+        getContentPane().add(bttn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 100, 30));
+
+        jPanel2.setBackground(new Color(255f, 255f, 255f, 0.3f));
+        jPanel2.setForeground(new Color(255,255,255, 160));
+        jPanel2.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
