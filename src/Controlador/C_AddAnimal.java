@@ -135,19 +135,7 @@ public class C_AddAnimal {
                 }
             }
         });
-        
-        // Al recibir "cerrar ventana", dispatch
-        v_addAnimal.addWindowListener(new WindowAdapter() {
-
-            @Override
-            public void windowClosing(WindowEvent e) {
-                v_addAnimal.dispose();
-            }
-
-            
-            
-        });
-        
+                
         // Poner la ventana al medio
         v_addAnimal.setLocationRelativeTo(null);
         

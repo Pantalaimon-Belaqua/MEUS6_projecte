@@ -31,7 +31,7 @@ public class V_OptionAdd extends javax.swing.JFrame {
         bttn_addCuidador = new javax.swing.JButton();
         bttn_addVisita = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         bttn_addAnimal.setText("Animal");
 
