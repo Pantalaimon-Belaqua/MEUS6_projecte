@@ -37,19 +37,6 @@ public class C_AddVisita {
 
         });
 
-        // Al escribir en numero de informe
-        this.v_addVisita.input_numero.addKeyListener(new KeyAdapter() {
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                if (allInputsFull()) {
-                    v_addVisita.bttn_addVisita.setEnabled(true);
-                } else {
-                    v_addVisita.bttn_addVisita.setEnabled(false);
-                }
-            }
-        });
-
         // Al escribir en el tipo
         this.v_addVisita.input_tipo.addKeyListener(new KeyAdapter() {
 
@@ -98,6 +85,10 @@ public class C_AddVisita {
                     String tipoVisita, resultado, precio;
                     M_Visita m_visita = new M_Visita();
     
+                    // Coger los datos que haya puesto el usuario
+                    tipoVisita = v_addVisita.input_tipo.getText().trim();
+                    resultado = v_addVisita.input_resultado.getText().trim();
+                    
                     
 
                     
