@@ -68,6 +68,8 @@ public class C_AddAnimal {
             public void keyReleased(KeyEvent e) {
                 if(!(v_addAnimal.input_nombreAnimal.getText().isEmpty() || v_addAnimal.input_especie.getText().isEmpty())){
                     v_addAnimal.bttn_addAnimal.setEnabled(true);
+                } else {
+                    v_addAnimal.bttn_addAnimal.setEnabled(false);
                 }
             }
 
@@ -82,6 +84,8 @@ public class C_AddAnimal {
             public void keyReleased(KeyEvent e) {
                 if(!(v_addAnimal.input_nombreAnimal.getText().isEmpty() || v_addAnimal.input_especie.getText().isEmpty())){
                     v_addAnimal.bttn_addAnimal.setEnabled(true);
+                } else {
+                    v_addAnimal.bttn_addAnimal.setEnabled(false);
                 }
             }
 
@@ -106,6 +110,8 @@ public class C_AddAnimal {
             }
         });
         
+        // Poner la ventana al medio
+        v_addAnimal.setLocationRelativeTo(null);
         
     }
 
