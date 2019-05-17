@@ -34,7 +34,7 @@ public class V_AddVisita extends javax.swing.JFrame {
         input_numero = new javax.swing.JTextField();
         input_tipo = new javax.swing.JTextField();
         input_precio = new javax.swing.JTextField();
-        bttn_añadir = new javax.swing.JButton();
+        bttn_addVisita = new javax.swing.JButton();
         label_resultado = new javax.swing.JLabel();
         input_resultado = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -85,9 +85,9 @@ public class V_AddVisita extends javax.swing.JFrame {
         });
         getContentPane().add(input_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 70, 30));
 
-        bttn_añadir.setText("Añadir");
-        bttn_añadir.setToolTipText("");
-        getContentPane().add(bttn_añadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 90, 30));
+        bttn_addVisita.setText("Añadir");
+        bttn_addVisita.setToolTipText("");
+        getContentPane().add(bttn_addVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 90, 30));
 
         label_resultado.setFont(new java.awt.Font("TlwgTypewriter", 0, 18)); // NOI18N
         label_resultado.setForeground(new java.awt.Color(1, 1, 1));
@@ -179,7 +179,7 @@ public class V_AddVisita extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_añadir;
+    public javax.swing.JButton bttn_addVisita;
     public javax.swing.JTextField input_numero;
     public javax.swing.JTextField input_precio;
     public javax.swing.JTextField input_resultado;

@@ -129,7 +129,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="bttn_a&#xf1;adir">
+    <Component class="javax.swing.JButton" name="bttn_addVisita">
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
