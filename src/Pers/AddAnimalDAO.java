@@ -117,12 +117,14 @@ public class AddAnimalDAO extends BaseDAO {
         ResultSet rs;
         ArrayList<String> cuidadores = new ArrayList<>();
         
-        query = "SELECT nombre FROM Cuidador";
+        query = "SELECT DNI, nombre FROM Cuidador";
         stmt = conn.prepareStatement(query);
         rs = stmt.executeQuery();
         
         while(rs.next()){
-            cuidadores.add(rs.getString("nombre"));
+            String cuidador;
+            cuidador =  rs.getString("nombre") + " - " + rs.getString("DNI");
+            cuidadores.add(cuidador);
         }
         
         stmt.close();
