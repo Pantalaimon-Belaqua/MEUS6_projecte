@@ -20,9 +20,11 @@ import java.awt.event.WindowEvent;
 public class C_OptionAdd {
 
     V_OptionAdd v_optionAdd;
+    int idAnimal;
 
-    public C_OptionAdd(V_OptionAdd v_optionAdd) {
+    public C_OptionAdd(V_OptionAdd v_optionAdd, int idAnimal) {
         this.v_optionAdd = v_optionAdd;
+        this.idAnimal = idAnimal;
 
         // Al pulsar Animal
         this.v_optionAdd.bttn_addAnimal.addActionListener(new ActionListener() {
