@@ -36,7 +36,7 @@ public class V_AddCuidador extends javax.swing.JFrame {
         input_telefono = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        bttn_añadir = new javax.swing.JButton();
+        bttn_addCuidador = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -62,7 +62,7 @@ public class V_AddCuidador extends javax.swing.JFrame {
         jLabel1.setText("DNI");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
 
-        bttn_añadir.setText("Añadir");
+        bttn_addCuidador.setText("Añadir");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -70,14 +70,14 @@ public class V_AddCuidador extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(123, 123, 123)
-                .addComponent(bttn_añadir)
+                .addComponent(bttn_addCuidador)
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(209, Short.MAX_VALUE)
-                .addComponent(bttn_añadir)
+                .addComponent(bttn_addCuidador)
                 .addContainerGap())
         );
 
@@ -125,7 +125,7 @@ public class V_AddCuidador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_añadir;
+    public javax.swing.JButton bttn_addCuidador;
     public javax.swing.JTextField input_direccion;
     public javax.swing.JTextField input_dni;
     public javax.swing.JTextField input_nombreCuidador;
