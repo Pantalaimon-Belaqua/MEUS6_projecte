@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -126,9 +127,18 @@ public class C_Principal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                V_OptionAdd v_optionAdd = new V_OptionAdd();
-                C_OptionAdd c_optionAdd = new C_OptionAdd(v_optionAdd);
-                v_optionAdd.setVisible(true);
+                
+                if(v_principal.tablaAnimales.getSelectedRow() == -1){
+                    
+                    JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+                    
+                } else {
+                    V_OptionAdd v_optionAdd = new V_OptionAdd();
+                    C_OptionAdd c_optionAdd = new C_OptionAdd(v_optionAdd, getSelectedAnimalID());
+                    v_optionAdd.setVisible(true);
+                }
+                
+                
             }
         });
         
@@ -137,17 +147,25 @@ public class C_Principal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                int fila = v_principal.tablaAnimales.getSelectedRow();
-                int id = (int) v_principal.tablaAnimales.getValueAt(fila, 0);
                 
-                try {
-                    principalDAO.deleteAnimal(id);
-                } catch (SQLException ex) {
-                    Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                if(v_principal.tablaAnimales.getSelectedRow() == -1){
+                    
+                    JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+                    
+                } else {
+                    int id = getSelectedAnimalID();
+                
+                    try {
+                        principalDAO.deleteAnimal(id);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    // Refrescar la tabla
+                    updateTable();
                 }
                 
-                // Refrescar la tabla
-                updateTable();
+                
             }
         });
         
@@ -190,6 +208,11 @@ public class C_Principal {
         }
     }
     
-    
+    public int getSelectedAnimalID(){
+        int fila = v_principal.tablaAnimales.getSelectedRow();
+        int id = (int) v_principal.tablaAnimales.getValueAt(fila, 0);
+        
+        return id;
+    }
     
 }
