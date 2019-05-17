@@ -20,6 +20,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -98,16 +99,53 @@ public class C_AddAnimal {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (check()) {
-                    String nombre, especie;
+                if (!check()) {
+                    String nombre, especie, DNI;
+                    M_Animal m_animal = new M_Animal();
 
+                    // Coger lo que haya puesto el usuario
                     nombre = v_addAnimal.input_nombreAnimal.getText();
                     especie = v_addAnimal.input_especie.getText();
+                    DNI = (String) v_addAnimal.select_cuidador.getSelectedItem();
 
-                    //m_animal = new M_Animal();
-                    //animalDAO.addAnimal(m_animal);
+                    // Si el cuidador es Ninguno, lo intertarás en la BBDD como Null
+                    if(DNI.equals("Ninguno")){
+                        DNI = null;
+                    } else {
+                        // Si no, separa el nombre del DNI
+                        DNI = DNI.replaceAll(" ", "").split("-")[1];
+                    }
+                    
+                    // Añade los datos al objeto del animal
+                    m_animal.setDNICuidador(DNI);
+                    m_animal.setNombre(nombre);
+                    m_animal.setEspecie(especie);
+                    
+                    // Y añade el animal a la BBDD
+                    try {
+                        animalDAO.addAnimal(m_animal);
+                        JOptionPane.showMessageDialog(v_addAnimal, "El animal ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                        v_addAnimal.dispatchEvent(new WindowEvent(v_addAnimal, WindowEvent.WINDOW_CLOSING));
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(v_addAnimal, "Ha habido un error al añadir el animal", "", JOptionPane.ERROR_MESSAGE);
+                        Logger.getLogger(C_AddAnimal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    
                 }
             }
+        });
+        
+        // Al recibir "cerrar ventana", dispatch
+        v_addAnimal.addWindowListener(new WindowAdapter() {
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                v_addAnimal.dispose();
+            }
+
+            
+            
         });
         
         // Poner la ventana al medio
