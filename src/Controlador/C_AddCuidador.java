@@ -18,26 +18,28 @@ import java.awt.event.WindowListener;
  * @author noelia
  */
 public class C_AddCuidador {
-    
+
     public V_AddCuidador v_addCuidador;
     private AddCuidadorDAO cuidadorDAO = new AddCuidadorDAO();
     M_Cuidador m_cuidador;
 
     public C_AddCuidador(V_AddCuidador v_addCuidador) {
         this.v_addCuidador = v_addCuidador;
-        
-       this.v_addCuidador.bttn_enviar.addActionListener(new ActionListener() {
+
+        //Al cargar la ventana
+        this.v_addCuidador.addWindowListener(new WindowListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-
-            
-            
+            public void windowActivated(WindowEvent e) {
+                
+                v_addCuidador.bttn_añadir.setEnabled(false);
+                      
             }
-        });
+
+        }
+       
+        );
+
     }
-    
-    
-    
-    
+
 }
