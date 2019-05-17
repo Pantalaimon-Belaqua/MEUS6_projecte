@@ -106,7 +106,7 @@ public class C_AddVisita {
     }
 
     private boolean allInputsFull() {
-        if (!v_addVisita.input_numero.getText().isEmpty() || v_addVisita.input_tipo.getText().isEmpty()
+        if (!v_addVisita.input_tipo.getText().isEmpty()
                 || v_addVisita.input_resultado.getText().isEmpty() || v_addVisita.input_precio.getText().isEmpty()) {
             return true;
         } else {
