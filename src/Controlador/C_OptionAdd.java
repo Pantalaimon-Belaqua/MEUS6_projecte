@@ -39,6 +39,7 @@ public class C_OptionAdd {
             @Override
             public void actionPerformed(ActionEvent e) {
                 V_AddCuidador v_addCuidador = new V_AddCuidador();
+                C_AddCuidador c_addCuidador = new C_AddCuidador(v_addCuidador);
                 v_addCuidador.setVisible(true);
             }
         });
