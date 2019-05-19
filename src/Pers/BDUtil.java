@@ -86,47 +86,29 @@ public class BDUtil {
         AddAnimalDAO addAnimalDAO = new AddAnimalDAO();
         AddCuidadorDAO addCuidadorDAO = new AddCuidadorDAO();
         
-        // Crear animales
-        M_Animal a1 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
-        M_Animal a2 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
-        M_Animal a3 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
-        M_Animal a4 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
-        M_Animal a5 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
-        M_Animal a6 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
-        
-        // Crear cuidadores
-        M_Cuidador c1 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
-        M_Cuidador c2 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
-        M_Cuidador c3 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
-        M_Cuidador c4 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
-        M_Cuidador c5 = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
-        
-        // Crer animales con cuidadores
-        M_Animal a7 = new M_Animal("A7", GenerateAnimals.generateSpecies(), c1.getDNI());
-        M_Animal a8 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), c1.getDNI());
-        M_Animal a9 = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), c2.getDNI());
-        
         try {
-
-            // Añadir cuidadores
+            
+            // Crear y añadir cuidadores
             // Hay que añadirlos antes que los animales de otro modo no se podrá crear la relación
             // ya que el DNI no existirá.
-            addCuidadorDAO.addCuidador(c1);
-            addCuidadorDAO.addCuidador(c2);
-            addCuidadorDAO.addCuidador(c3);
-            addCuidadorDAO.addCuidador(c4);
-            addCuidadorDAO.addCuidador(c5);            
+            for (int i = 0; i < 30; i++) {
+                M_Cuidador c = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+                addCuidadorDAO.addCuidador(c);
+            }
             
-            // Añadir animales
-            addAnimalDAO.addAnimal(a1);
-            addAnimalDAO.addAnimal(a2);
-            addAnimalDAO.addAnimal(a3);
-            addAnimalDAO.addAnimal(a4);
-            addAnimalDAO.addAnimal(a5);
-            addAnimalDAO.addAnimal(a6);
-            addAnimalDAO.addAnimal(a7);
-            addAnimalDAO.addAnimal(a8);
-            addAnimalDAO.addAnimal(a9);
+            // Crear y añadir animales
+            for (int i = 0; i < 30; i++) {
+                M_Animal a = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+                addAnimalDAO.addAnimal(a);
+            }
+            
+            // Crear y añadir animales que tienen cuidadores
+            for (int i = 0; i < 10; i++) {
+                M_Cuidador c = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
+                addCuidadorDAO.addCuidador(c);
+                M_Animal a = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), c.getDNI());
+                addAnimalDAO.addAnimal(a);
+            }
             
             
         } catch (SQLException ex) {
