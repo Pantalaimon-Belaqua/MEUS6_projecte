@@ -5,12 +5,17 @@
  */
 package Vista;
 
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+
 /**
  *
  * @author noelia
  */
 public class V_AddCuidador extends javax.swing.JFrame {
 
+    Color panelColor = new Color(240,240,240, 200);
+    
     /**
      * Creates new form V_AddCuidador
      */
@@ -27,9 +32,6 @@ public class V_AddCuidador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         input_dni = new javax.swing.JTextField();
         input_nombreCuidador = new javax.swing.JTextField();
         input_direccion = new javax.swing.JTextField();
@@ -37,22 +39,15 @@ public class V_AddCuidador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         bttn_addCuidador = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Añadir cuidador");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
-
-        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
-        jLabel3.setText("Dirección");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
-
-        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
-        jLabel4.setText("Teléfono");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
         getContentPane().add(input_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 73, 115, -1));
         getContentPane().add(input_nombreCuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 118, 133, -1));
         getContentPane().add(input_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 163, 161, -1));
@@ -62,23 +57,48 @@ public class V_AddCuidador extends javax.swing.JFrame {
         jLabel1.setText("DNI");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
 
+        jPanel1.setBackground(panelColor);
+
         bttn_addCuidador.setText("Añadir");
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Nombre");
+
+        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel3.setText("Dirección");
+
+        jLabel4.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel4.setText("Teléfono");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addComponent(bttn_addCuidador)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(bttn_addCuidador)))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(209, Short.MAX_VALUE)
+                .addGap(62, 62, 62)
+                .addComponent(jLabel2)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel3)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
                 .addComponent(bttn_addCuidador)
-                .addContainerGap())
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 290, 250));

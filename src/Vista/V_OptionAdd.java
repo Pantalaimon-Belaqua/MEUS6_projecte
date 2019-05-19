@@ -30,38 +30,24 @@ public class V_OptionAdd extends javax.swing.JFrame {
         bttn_addAnimal = new javax.swing.JButton();
         bttn_addCuidador = new javax.swing.JButton();
         bttn_addVisita = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Añadir");
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bttn_addAnimal.setText("Animal");
+        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 94, -1));
 
         bttn_addCuidador.setText("Cuidador");
+        getContentPane().add(bttn_addCuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         bttn_addVisita.setText("Visita");
+        getContentPane().add(bttn_addVisita, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 94, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bttn_addVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bttn_addCuidador)
-                    .addComponent(bttn_addAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(bttn_addAnimal)
-                .addGap(28, 28, 28)
-                .addComponent(bttn_addCuidador)
-                .addGap(27, 27, 27)
-                .addComponent(bttn_addVisita)
-                .addContainerGap(89, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/cat_computer_200.gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 200));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -105,5 +91,6 @@ public class V_OptionAdd extends javax.swing.JFrame {
     public javax.swing.JButton bttn_addAnimal;
     public javax.swing.JButton bttn_addCuidador;
     public javax.swing.JButton bttn_addVisita;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
