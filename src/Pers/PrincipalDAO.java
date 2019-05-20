@@ -123,7 +123,7 @@ public class PrincipalDAO extends BaseDAO {
         rs = stmt.executeQuery();
         rs.next();
         
-        if(rs.getInt(1) == 1){
+        if(rs.getInt(1) > 0){
             return true;
         } else {
             return false;
