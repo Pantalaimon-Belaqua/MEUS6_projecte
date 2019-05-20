@@ -49,6 +49,12 @@ public class VerCuidadorDAO extends BaseDAO {
         return cuidadores;
     }
     
+    /**
+     * Elimina un cuidador
+     * @param DNI
+     * @throws SQLException 
+     */
+    
     public void deleteCuidador(String DNI) throws SQLException{
         
         String query;
