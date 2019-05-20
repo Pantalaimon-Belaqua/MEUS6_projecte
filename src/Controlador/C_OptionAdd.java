@@ -26,12 +26,12 @@ public class C_OptionAdd {
         this.v_optionAdd = v_optionAdd;
         this.idAnimal = idAnimal;
 
-        // Al pulsar Animal
+        // Al pulsar (añadir) Animal
         this.v_optionAdd.bttn_addAnimal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 V_AddAnimal v_addAnimal = new V_AddAnimal();
-                C_AddAnimal c_addAnimal = new C_AddAnimal(v_addAnimal);
+                C_AddAnimal c_addAnimal = new C_AddAnimal(v_addAnimal, idAnimal);
                 v_addAnimal.setVisible(true);
                 v_optionAdd.dispatchEvent(new WindowEvent(v_optionAdd, WindowEvent.WINDOW_CLOSING));
             }
