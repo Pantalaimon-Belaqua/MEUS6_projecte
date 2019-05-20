@@ -11,6 +11,7 @@ import Pers.PrincipalDAO;
 import Vista.V_AddAnimal;
 import Vista.V_OptionAdd;
 import Vista.V_Principal;
+import Vista.V_VerCuidador;
 import Vista.V_VerVisita;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -210,7 +211,19 @@ public class C_Principal {
                     // Coger el id del animal
                     int id = getSelectedAnimalID();
 
-                    
+                    try {
+                        if(principalDAO.hasKeepers(id)){
+                            
+                            V_VerCuidador v_verCuidador = new V_VerCuidador();
+                            C_VerCuidador c_VerCuidador = new C_VerCuidador(v_verCuidador, id);
+                            v_verCuidador.setEnabled(true);
+                            
+                        } else {
+                            JOptionPane.showMessageDialog(v_principal, "El animal seleccionado no tiene cuidadores", "", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         });
