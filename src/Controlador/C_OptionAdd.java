@@ -31,7 +31,7 @@ public class C_OptionAdd {
             @Override
             public void actionPerformed(ActionEvent e) {
                 V_AddAnimal v_addAnimal = new V_AddAnimal();
-                C_AddAnimal c_addAnimal = new C_AddAnimal(v_addAnimal, idAnimal);
+                C_AddAnimal c_addAnimal = new C_AddAnimal(v_addAnimal);
                 v_addAnimal.setVisible(true);
                 v_optionAdd.dispatchEvent(new WindowEvent(v_optionAdd, WindowEvent.WINDOW_CLOSING));
             }
@@ -55,6 +55,7 @@ public class C_OptionAdd {
             @Override
             public void actionPerformed(ActionEvent e) {
                 V_AddVisita v_addVisita = new V_AddVisita();
+                C_AddVisita c_addVisita = new C_AddVisita(v_addVisita, idAnimal);
                 v_addVisita.setVisible(true);
                 v_optionAdd.dispatchEvent(new WindowEvent(v_optionAdd, WindowEvent.WINDOW_CLOSING));
             }

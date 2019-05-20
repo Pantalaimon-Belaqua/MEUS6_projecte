@@ -33,7 +33,7 @@ public class AddVisitaDAO extends BaseDAO {
         String query;
         PreparedStatement stmt;
         
-        query = "INSERT INTO Visita VALUES (?,?,?,?)";
+        query = "INSERT INTO Visita(idAnimal, tipoVisita, resultado, precio) VALUES (?,?,?,?)";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, idAnimal);
         stmt.setString(2, visita.getTipoVisita());
