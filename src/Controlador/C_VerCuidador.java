@@ -51,7 +51,7 @@ public class C_VerCuidador {
         ArrayList<M_Cuidador> cuidadores = null;
                 
         try {
-            cuidadores = verCuidadorDAO.;
+            cuidadores = verCuidadorDAO.getCuidadores(idAnimal);
         } catch (SQLException ex) {
             Logger.getLogger(C_VerVisita.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -214,9 +214,10 @@ public class C_Principal {
                     try {
                         if(principalDAO.hasKeepers(id)){
                             
+                            
                             V_VerCuidador v_verCuidador = new V_VerCuidador();
                             C_VerCuidador c_VerCuidador = new C_VerCuidador(v_verCuidador, id);
-                            v_verCuidador.setEnabled(true);
+                            v_verCuidador.setVisible(true);
                             
                         } else {
                             JOptionPane.showMessageDialog(v_principal, "El animal seleccionado no tiene cuidadores", "", JOptionPane.WARNING_MESSAGE);

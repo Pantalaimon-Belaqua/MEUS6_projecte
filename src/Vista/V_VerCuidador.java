@@ -68,7 +68,7 @@ public class V_VerCuidador extends javax.swing.JFrame {
         getContentPane().add(b_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoCuidador.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 430));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
