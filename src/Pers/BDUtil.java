@@ -8,6 +8,7 @@ package Pers;
 import Main.Main;
 import Modelo.M_Animal;
 import Modelo.M_Cuidador;
+import Modelo.M_Visita;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.GenerateAnimals;
 import utils.GeneratePeople;
+import utils.GenerateVisit;
 
 /**
  *
@@ -85,6 +87,7 @@ public class BDUtil {
             
         AddAnimalDAO addAnimalDAO = new AddAnimalDAO();
         AddCuidadorDAO addCuidadorDAO = new AddCuidadorDAO();
+        AddVisitaDAO addVisitaDAO = new AddVisitaDAO();
         
         try {
             
@@ -94,12 +97,14 @@ public class BDUtil {
             for (int i = 0; i < 30; i++) {
                 M_Cuidador c = new M_Cuidador(GeneratePeople.generateDNI(), GeneratePeople.generateName(), GeneratePeople.generateAddress(), String.valueOf(GeneratePeople.generatePhoneNumber()));
                 addCuidadorDAO.addCuidador(c);
+                System.out.println("\tAñadido cuidador: " + c.getNombre());
             }
             
             // Crear y añadir animales
-            for (int i = 0; i < 30; i++) {
+            for (int i = 0; i < 10; i++) {
                 M_Animal a = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
                 addAnimalDAO.addAnimal(a);
+                System.out.println("\tAñadido " + a.getEspecie() + ": " + a.getNombre());
             }
             
             // Crear y añadir animales que tienen cuidadores
@@ -108,6 +113,16 @@ public class BDUtil {
                 addCuidadorDAO.addCuidador(c);
                 M_Animal a = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), c.getDNI());
                 addAnimalDAO.addAnimal(a);
+                System.out.println("\tAñadido " + a.getEspecie() + ": " + a.getNombre() + " con cuidador: " + c.getNombre());
+            }
+            
+            // Crear y añadir animales que tienen visitas
+            for (int i = 0; i < 10; i++) {
+                M_Animal a = new M_Animal(GenerateAnimals.generateName(), GenerateAnimals.generateSpecies(), "");
+                addAnimalDAO.addAnimal(a);
+                M_Visita v = new M_Visita(a.getId(), GenerateVisit.generateType(), GenerateVisit.generateResult(), GenerateVisit.generatePrice());
+                addVisitaDAO.addVisita(v, addAnimalDAO.getAnimalId(a));
+                System.out.println("\tAñadida visita " + v.getTipoVisita() + " para " + a.getEspecie() + " " + a.getNombre());
             }
             
             
@@ -121,13 +136,18 @@ public class BDUtil {
         Connection conn = BaseDAO.getConn();
         PreparedStatement stmt;
         try {
-            String query = "drop table Producto";
+            String query = "drop table Visita";
             stmt = conn.prepareStatement(query);
             stmt.executeUpdate();
-            stmt = conn.prepareStatement("drop table Categoria");
+            stmt = conn.prepareStatement("drop table animal_cuidador");
+            stmt.executeUpdate();
+            stmt = conn.prepareStatement("drop table Animal");
+            stmt.executeUpdate();
+            stmt = conn.prepareStatement("drop table Cuidador");
             stmt.executeUpdate();
             stmt.close();
             
+            System.out.println("Datos eliminados, creado estructura...");
             createEstructuraMysql();
         } catch (Exception e) {
             e.printStackTrace();
