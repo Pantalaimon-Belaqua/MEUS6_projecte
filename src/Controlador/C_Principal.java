@@ -169,6 +169,27 @@ public class C_Principal {
             }
         });
         
+        // Al pulsar "ver visita"
+        this.v_principal.bttn_verVisita.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Coger el id del animal
+                int id = getSelectedAnimalID();
+                
+                try {
+                    if(principalDAO.hasVisits(id)){
+                        // TODO abrir vista "Ver Visita"
+                    } else {
+                        JOptionPane.showMessageDialog(v_principal, "El animal seleccionado no tiene visitas", "", JOptionPane.WARNING_MESSAGE);
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
+        });
+        
         // Poner la ventana al medio
         v_principal.setLocationRelativeTo(null);
         
