@@ -21,6 +21,13 @@ public class AddVisitaDAO extends BaseDAO {
         connect();
     }
     
+    /**
+     * Añade una visita
+     * @param visita
+     * @param idAnimal
+     * @throws SQLException 
+     */
+    
     public void addVisita(M_Visita visita, int idAnimal) throws SQLException{
         
         String query;
@@ -39,16 +46,6 @@ public class AddVisitaDAO extends BaseDAO {
         
     }
     
-    public ArrayList<M_Visita> getVisitas(){
-        ArrayList<M_Visita> visitas = new ArrayList<>();
-        String query;
-        PreparedStatement stmt;
-        ResultSet rs;
-        
-        
-        
-        
-        return visitas;
-    }
+    
     
 }

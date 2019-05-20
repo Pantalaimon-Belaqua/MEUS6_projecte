@@ -104,6 +104,30 @@ public class PrincipalDAO extends BaseDAO {
         
     }
     
+    /**
+     * Comprueba que un animal tenga visitas
+     * @param id
+     * @return 
+     */
     
+    public boolean hasVisits(int id) throws SQLException{
+        
+        String query;
+        PreparedStatement stmt;
+        ResultSet rs;
+        
+        query = "select count(*) from (select v.* from Visita v inner join Animal a on a.id=v.idAnimal where v.idAnimal = ?) t;";
+        
+        stmt = conn.prepareStatement(query);
+        stmt.setInt(1, id);
+        rs = stmt.executeQuery();
+        rs.next();
+        
+        if(rs.getInt(1) == 1){
+            return true;
+        } else {
+            return false;
+        }
+    }
     
 }
