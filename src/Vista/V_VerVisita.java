@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author noelia
@@ -59,6 +61,7 @@ public class V_VerVisita extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabla_visitas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tabla_visitas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 510, 290));

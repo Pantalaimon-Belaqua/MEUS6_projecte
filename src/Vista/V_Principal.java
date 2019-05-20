@@ -67,6 +67,7 @@ public class V_Principal extends javax.swing.JFrame {
         });
         tablaAnimales.setToolTipText("");
         tablaAnimales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaAnimales.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(tablaAnimales);
 
         botonAñadir.setText("Añadir");
