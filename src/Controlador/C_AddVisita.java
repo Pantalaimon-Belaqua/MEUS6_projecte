@@ -6,13 +6,18 @@
 package Controlador;
 
 import Modelo.M_Visita;
+import Pers.AddVisitaDAO;
 import Vista.V_AddVisita;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,11 +26,13 @@ import java.awt.event.WindowEvent;
 public class C_AddVisita {
 
     public V_AddVisita v_addVisita;
-    // private AddVisitaDAO visitaDAO = new AddVisitaDAO();
+    private AddVisitaDAO visitaDAO = new AddVisitaDAO();
     M_Visita m_visita;
+    private int idAnimal;
 
-    public C_AddVisita(V_AddVisita v_addVisita) {
+    public C_AddVisita(V_AddVisita v_addVisita, int idAnimal) {
         this.v_addVisita = v_addVisita;
+        this.idAnimal = idAnimal;
 
         // Al cargar la ventana
         this.v_addVisita.addWindowListener(new WindowAdapter() {
@@ -34,7 +41,6 @@ public class C_AddVisita {
             public void windowActivated(WindowEvent e) {
                 v_addVisita.bttn_addVisita.setEnabled(false);
             }
-
         });
 
         // Al escribir en el tipo
@@ -82,25 +88,59 @@ public class C_AddVisita {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!check()) {
-                    String tipoVisita, resultado, precio;
+                    String tipoVisita, resultado;
+                    Double precio;
                     M_Visita m_visita = new M_Visita();
-    
+
                     // Coger los datos que haya puesto el usuario
                     tipoVisita = v_addVisita.input_tipo.getText().trim();
                     resultado = v_addVisita.input_resultado.getText().trim();
-                    
-                    
+                    precio = Double.parseDouble(v_addVisita.input_precio.getText());
 
-                    
+                    // Añadir los datos al objeto de Visita
+                    m_visita.setTipoVisita(tipoVisita);
+                    m_visita.setResultado(resultado);
+                    m_visita.setPrecio(precio);
+
+                    // Añadir la visita a la BD.
+                    try {
+                        visitaDAO.addVisita(m_visita, idAnimal);
+                        JOptionPane.showMessageDialog(v_addVisita, "La visita ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                        v_addVisita.dispatchEvent(new WindowEvent(v_addVisita, WindowEvent.WINDOW_CLOSING));
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(v_addVisita, "Ha habido un error al añadir la visita", "", JOptionPane.ERROR_MESSAGE);
+                        Logger.getLogger(C_AddVisita.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
-
         });
-
     }
 
     private boolean check() {
         boolean error = false;
+
+        // Tipo
+        if (v_addVisita.input_tipo.getText().isEmpty()) {
+
+            v_addVisita.input_tipo.setBackground(Color.red);
+            error = true;
+        } else {
+            v_addVisita.input_tipo.setBackground(Color.white);
+        }
+
+        // Resultado
+        if (v_addVisita.input_resultado.getText().isEmpty()) {
+            v_addVisita.input_resultado.setBackground(Color.red);
+        } else {
+            v_addVisita.input_resultado.setBackground(Color.white);
+        }
+
+        // Precio
+        if (v_addVisita.input_precio.getText().isEmpty()) {
+            v_addVisita.input_precio.setBackground(Color.red);
+        } else {
+            v_addVisita.input_precio.setBackground(Color.white);
+        }
 
         return error;
     }
@@ -113,5 +153,4 @@ public class C_AddVisita {
             return false;
         }
     }
-
 }
