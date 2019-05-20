@@ -60,7 +60,7 @@ public class V_VerCuidador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabla_verCuidador);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 520, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 500, 240));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoCuidador.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 430));
