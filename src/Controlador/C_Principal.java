@@ -196,6 +196,24 @@ public class C_Principal {
 
             }
         });
+        
+        // Al pulsar "Ver cuidador"
+        v_principal.bttn_verCuidador.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (v_principal.tablaAnimales.getSelectedRow() == -1) {
+
+                    JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+
+                } else {
+                    // Coger el id del animal
+                    int id = getSelectedAnimalID();
+
+                    
+                }
+            }
+        });
 
         // Poner la ventana al medio
         v_principal.setLocationRelativeTo(null);
