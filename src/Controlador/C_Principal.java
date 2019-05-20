@@ -64,6 +64,8 @@ public class C_Principal {
 
                 updateTable();
 
+                // Selecciona la primera fila
+                v_principal.tablaAnimales.setRowSelectionInterval(0, 0);
             }
 
             // Cuando se cierra la ventana, desconectar de la BBDD
