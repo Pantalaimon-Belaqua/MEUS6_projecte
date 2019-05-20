@@ -49,4 +49,16 @@ public class VerCuidadorDAO extends BaseDAO {
         return cuidadores;
     }
     
+    public void deleteCuidador(String DNI) throws SQLException{
+        
+        String query;
+        PreparedStatement stmt;
+        
+        query = "DELETE FROM animal_cuidador WHERE DNICuidador = ?";
+        stmt = conn.prepareStatement(query);
+        stmt.setString(1, DNI);
+        stmt.executeUpdate();
+        stmt.close();
+    }
+    
 }
