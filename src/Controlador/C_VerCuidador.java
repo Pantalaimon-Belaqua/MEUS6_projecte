@@ -8,6 +8,8 @@ package Controlador;
 import Modelo.M_Cuidador;
 import Pers.VerCuidadorDAO;
 import Vista.V_VerCuidador;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
@@ -41,6 +43,22 @@ public class C_VerCuidador {
             
         });
         
+        // Al pulsar Eliminar
+        this.v_verCuidador.b_eliminar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (v_verCuidador.tabla_verCuidador.getSelectedRow() == -1) {
+
+                    JOptionPane.showMessageDialog(v_verCuidador, "Por favor, selecciona un cuidador primero", "", JOptionPane.WARNING_MESSAGE);
+
+                } else {
+                    // Coger el id del animal
+                    int id = getSelectedCuidadorDNI();                   
+                }
+            }
+        });
+        
         // Poner la ventana al medio
         v_verCuidador.setLocationRelativeTo(null);
     }
@@ -63,9 +81,16 @@ public class C_VerCuidador {
             }
 
         } else {
-            JOptionPane.showMessageDialog(v_verCuidador, "No se han podido cargar a los cuidadores", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(v_verCuidador, "No se han podido cargar los cuidadores", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         
+    }
+    
+     public int getSelectedCuidadorDNI() {
+        int fila = v_verCuidador.tabla_verCuidador.getSelectedRow();
+        int DNI = (int) v_verCuidador.tabla_verCuidador.getValueAt(fila, 0);
+
+        return DNI;
     }
     
     
