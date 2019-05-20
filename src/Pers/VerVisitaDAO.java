@@ -49,6 +49,7 @@ public class VerVisitaDAO extends BaseDAO {
             visitas.add(visita);
         }
         
+        stmt.close();
         return visitas;
     }
     
