@@ -5,6 +5,14 @@
  */
 package Pers;
 
+import Modelo.M_Cuidador;
+import Modelo.M_Visita;
+import static Pers.BaseDAO.conn;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 /**
  *
  * @author daniel
@@ -15,6 +23,30 @@ public class VerCuidadorDAO extends BaseDAO {
         connect();
     }
     
-    
+    public ArrayList<M_Cuidador> getCuidadores(int idAnimal) throws SQLException{
+        ArrayList<M_Cuidador> cuidadores = new ArrayList<>();
+        String query;
+        PreparedStatement stmt;
+        ResultSet rs;
+        
+        query = "select c.* from Cuidador c inner join animal_cuidador ac on ac.DNICuidador=c.DNI where ac.idAnimal = ?;";
+        stmt = conn.prepareStatement(query);
+        stmt.setInt(1, idAnimal);
+        rs = stmt.executeQuery();
+        
+        while(rs.next()){
+            M_Cuidador cuidador = new M_Cuidador();
+            
+            cuidador.setDNI(rs.getString("DNI"));
+            cuidador.setNombre(rs.getString("nombre"));
+            cuidador.setDireccion(rs.getString("direccion"));
+            cuidador.setTelefono(rs.getString("telefono"));            
+            
+            cuidadores.add(cuidador);
+        }
+        
+        stmt.close();
+        return cuidadores;
+    }
     
 }
