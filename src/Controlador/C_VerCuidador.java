@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
  * @author noelia
  */
 public class C_VerCuidador {
-    
+
     public V_VerCuidador v_verCuidador;
     private VerCuidadorDAO verCuidadorDAO = new VerCuidadorDAO();
     private int idAnimal;
@@ -32,7 +32,7 @@ public class C_VerCuidador {
     public C_VerCuidador(V_VerCuidador v_verCuidador, int idAnimal) {
         this.v_verCuidador = v_verCuidador;
         this.idAnimal = idAnimal;
-        
+
         // Al cargar la ventana, cargar las visitas del cuidador
         this.v_verCuidador.addWindowListener(new WindowAdapter() {
 
@@ -40,9 +40,9 @@ public class C_VerCuidador {
             public void windowActivated(WindowEvent e) {
                 updateTable();
             }
-            
+
         });
-        
+
         // Al pulsar Eliminar
         this.v_verCuidador.b_eliminar.addActionListener(new ActionListener() {
 
@@ -53,28 +53,35 @@ public class C_VerCuidador {
                     JOptionPane.showMessageDialog(v_verCuidador, "Por favor, selecciona un cuidador primero", "", JOptionPane.WARNING_MESSAGE);
 
                 } else {
-                    // Coger el id del animal
-                    int id = getSelectedCuidadorDNI();                   
+                    // Coger el dni del cuidador
+                    String DNI = getSelectedCuidadorDNI();
+
+                    try {
+                        verCuidadorDAO.deleteCuidador(DNI);
+                        updateTable();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(C_VerCuidador.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         });
-        
+
         // Poner la ventana al medio
         v_verCuidador.setLocationRelativeTo(null);
     }
-    
-    private void updateTable(){
+
+    private void updateTable() {
         DefaultTableModel model = (DefaultTableModel) v_verCuidador.tabla_verCuidador.getModel();
-        
+
         ArrayList<M_Cuidador> cuidadores = null;
-                
+
         try {
             cuidadores = verCuidadorDAO.getCuidadores(idAnimal);
         } catch (SQLException ex) {
             Logger.getLogger(C_VerVisita.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        if(cuidadores != null){
+        if (cuidadores != null) {
 
             for (M_Cuidador cuidador : cuidadores) {
                 model.addRow(new Object[]{cuidador.getDNI(), cuidador.getNombre(), cuidador.getDireccion(), cuidador.getTelefono()});
@@ -83,16 +90,14 @@ public class C_VerCuidador {
         } else {
             JOptionPane.showMessageDialog(v_verCuidador, "No se han podido cargar los cuidadores", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        
+
     }
-    
-     public int getSelectedCuidadorDNI() {
+
+    public String getSelectedCuidadorDNI() {
         int fila = v_verCuidador.tabla_verCuidador.getSelectedRow();
-        int DNI = (int) v_verCuidador.tabla_verCuidador.getValueAt(fila, 0);
+        String DNI = (String) v_verCuidador.tabla_verCuidador.getValueAt(fila, 0);
 
         return DNI;
     }
-    
-    
-}
 
+}
