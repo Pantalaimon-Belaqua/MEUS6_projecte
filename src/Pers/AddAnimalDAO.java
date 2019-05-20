@@ -40,17 +40,7 @@ public class AddAnimalDAO extends BaseDAO {
         stmt.executeUpdate();
         
         stmt.close();
-        
-        /***
-         * TODO
-         * SI DNI NOT EMPTY
-         *   crear una query para añadir el DNI y el idAnimal a la tabla animal_cuidador
-         *   ejecutar query
-         *   cerrar conexión
-         * 
-         * No comprovamos que el DNI exista porque el usuario sólo puede escojer DNIs existentes del selectbox
-         */
-        
+
         // Si el animal tiene un cuidador, añade la relación en la tabla animal_cuidador
         if(animal.getDNICuidador() != null && !animal.getDNICuidador().isEmpty()){
             query = "INSERT INTO animal_cuidador VALUES (?,?)";
@@ -75,7 +65,7 @@ public class AddAnimalDAO extends BaseDAO {
      * @return 
      */
     
-    private int getAnimalId(M_Animal animal){
+    public int getAnimalId(M_Animal animal){
         String query;
         ResultSet rs;
         PreparedStatement stmt;
