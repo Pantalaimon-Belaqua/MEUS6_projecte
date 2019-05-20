@@ -41,7 +41,7 @@ public class Main {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         
-//        BDUtil.insertarDatos();
+//        BDUtil.insertarDatos();      
         
         V_Principal v_principal = new V_Principal();
         C_Principal c_principal = new C_Principal(v_principal);
