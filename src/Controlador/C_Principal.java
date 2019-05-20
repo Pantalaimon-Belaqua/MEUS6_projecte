@@ -11,6 +11,7 @@ import Pers.PrincipalDAO;
 import Vista.V_AddAnimal;
 import Vista.V_OptionAdd;
 import Vista.V_Principal;
+import Vista.V_VerVisita;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
@@ -179,7 +180,9 @@ public class C_Principal {
                 
                 try {
                     if(principalDAO.hasVisits(id)){
-                        // TODO abrir vista "Ver Visita"
+                        V_VerVisita v_verVisita = new V_VerVisita();
+                        C_VerVisita c_verVisita = new C_VerVisita(v_verVisita, id);
+                        v_verVisita.setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(v_principal, "El animal seleccionado no tiene visitas", "", JOptionPane.WARNING_MESSAGE);
                     }
