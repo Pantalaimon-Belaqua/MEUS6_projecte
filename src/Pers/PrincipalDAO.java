@@ -130,4 +130,31 @@ public class PrincipalDAO extends BaseDAO {
         }
     }
     
+    /**
+     * Comprueva si el animal tiene cuidadores
+     * @param id
+     * @return 
+     */
+    
+    public boolean hasKeepers(int id) throws SQLException{
+        
+        String query;
+        PreparedStatement stmt;
+        ResultSet rs;
+        
+        query = "select count(*) from (select c.* from Cuidador c inner join animal_cuidador ac on ac.DNICuidador=c.DNI where ac.idAnimal = ?) t;";
+        stmt = conn.prepareStatement(query);
+        stmt.setInt(1, id);
+        rs = stmt.executeQuery();
+        rs.next();
+        
+        if (rs.getInt(1) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        
+    }
+    
 }
