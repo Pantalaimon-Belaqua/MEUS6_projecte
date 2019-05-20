@@ -114,6 +114,9 @@ public class C_AddVisita {
                 }
             }
         });
+        
+        // Poner la ventana al medio
+        v_addVisita.setLocationRelativeTo(null);
     }
 
     private boolean check() {

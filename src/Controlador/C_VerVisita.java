@@ -40,6 +40,9 @@ public class C_VerVisita {
             }
             
         });
+        
+        // Poner la ventana al medio
+        v_verVisita.setLocationRelativeTo(null);
     }
 
     
