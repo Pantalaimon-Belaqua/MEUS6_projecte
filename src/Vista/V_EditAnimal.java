@@ -9,12 +9,12 @@ package Vista;
  *
  * @author noelia
  */
-public class V_EditAnimal1 extends javax.swing.JFrame {
+public class V_EditAnimal extends javax.swing.JFrame {
 
     /**
      * Creates new form V_AddAnimal
      */
-    public V_EditAnimal1() {
+    public V_EditAnimal() {
         initComponents();
     }
 
@@ -111,21 +111,23 @@ public class V_EditAnimal1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_EditAnimal1().setVisible(true);
+                new V_EditAnimal().setVisible(true);
             }
         });
     }

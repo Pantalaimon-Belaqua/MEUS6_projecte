@@ -38,8 +38,6 @@ public class AddAnimalDAO extends BaseDAO {
         stmt.setString(1, animal.getNombre());
         stmt.setString(2, animal.getEspecie());
         stmt.executeUpdate();
-        
-        stmt.close();
 
         // Si el animal tiene un cuidador, añade la relación en la tabla animal_cuidador
         if(animal.getDNICuidador() != null && !animal.getDNICuidador().isEmpty()){
@@ -50,10 +48,9 @@ public class AddAnimalDAO extends BaseDAO {
             
             stmt.executeUpdate();
             
-            stmt.close();
-            
         }
         
+        stmt.close();
         System.out.println("   " + animal.getEspecie() + " añadido");
     }
     
@@ -81,18 +78,11 @@ public class AddAnimalDAO extends BaseDAO {
             
             id = rs.getInt(1);
             
+            stmt.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddAnimalDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         return id;
-        
-    
-        
-        // TODO updateAnimal
-        // donde el ID se cogerá el objeto recuperado de la base de datos,
-        // por lo que no hay que preocuparse por animales con el mismo nombre y especie
-        // al crear la relación con su cuidador.
     }
     
     /**

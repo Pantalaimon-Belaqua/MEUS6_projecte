@@ -21,6 +21,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -130,7 +131,7 @@ public class C_EditAnimal {
                     
                     // Y añade el animal a la BBDD
                     try {
-                        editAnimalDAO.addAnimal(m_animal);
+                        editAnimalDAO.editAnimal(m_animal, idAnimal);
                         JOptionPane.showMessageDialog(v_editAnimal, "El animal ha sido editado correctamente", "", JOptionPane.INFORMATION_MESSAGE);
                         v_editAnimal.dispatchEvent(new WindowEvent(v_editAnimal, WindowEvent.WINDOW_CLOSING));
                     } catch (SQLException ex) {
@@ -178,6 +179,16 @@ public class C_EditAnimal {
         // Seleccionar el DNI correcto
         if(animal.getDNICuidador() == null){
             v_editAnimal.select_cuidador.setSelectedIndex(0);
+        } else {
+            // Recorrer los DNI del combo y seleccionar el que toca
+            ComboBoxModel model = v_editAnimal.select_cuidador.getModel();
+            for (int i = 1; i < model.getSize(); i++) {
+                String currentItem = (String) model.getElementAt(i);
+                if(currentItem.replaceAll(" ", "").split("-")[1].equals(animal.getDNICuidador())){
+                    v_editAnimal.select_cuidador.setSelectedItem(currentItem);
+                    break;
+                }
+            }
         }
     }
 

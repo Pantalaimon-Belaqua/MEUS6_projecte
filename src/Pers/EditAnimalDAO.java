@@ -78,6 +78,7 @@ public class EditAnimalDAO  extends BaseDAO {
         animal.setEspecie(rs.getString("especie"));
         animal.setDNICuidador(rs.getString("DNI"));
         
+        stmt.close();
         return animal;
     }
     
@@ -98,6 +99,8 @@ public class EditAnimalDAO  extends BaseDAO {
         stmt.setInt(1, id);
         rs = stmt.executeQuery();
         rs.next();
+        
+        stmt.close();
         
         if (rs.getInt(1) > 0) {
             return true;
