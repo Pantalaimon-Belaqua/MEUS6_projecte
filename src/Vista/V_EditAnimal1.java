@@ -9,12 +9,12 @@ package Vista;
  *
  * @author noelia
  */
-public class V_AddAnimal extends javax.swing.JFrame {
+public class V_EditAnimal1 extends javax.swing.JFrame {
 
     /**
      * Creates new form V_AddAnimal
      */
-    public V_AddAnimal() {
+    public V_EditAnimal1() {
         initComponents();
     }
 
@@ -30,11 +30,13 @@ public class V_AddAnimal extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         input_nombreAnimal = new javax.swing.JTextField();
-        bttn_addAnimal = new javax.swing.JButton();
+        bttn_modificar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         select_cuidador = new javax.swing.JComboBox();
         input_especie = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
@@ -46,38 +48,40 @@ public class V_AddAnimal extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Especie");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, -1, -1));
 
         input_nombreAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_nombreAnimalActionPerformed(evt);
             }
         });
-        getContentPane().add(input_nombreAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 124, -1));
+        getContentPane().add(input_nombreAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 124, -1));
 
-        bttn_addAnimal.setText("Añadir");
-        getContentPane().add(bttn_addAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 80, 40));
+        bttn_modificar.setText("Editar");
+        getContentPane().add(bttn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 80, 40));
 
         jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Nombre");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
         jLabel4.setForeground(new java.awt.Color(1, 1, 1));
         jLabel4.setText("Cuidador");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, -1, -1));
 
         select_cuidador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ninguno" }));
-        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, -1, -1));
+        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, -1, -1));
 
         input_especie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_especieActionPerformed(evt);
             }
         });
-        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 124, -1));
+        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 124, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 260, 230));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoanimal03_opt.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 400));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoperros.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -107,32 +111,35 @@ public class V_AddAnimal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_AddAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_AddAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_AddAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_AddAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_EditAnimal1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_AddAnimal().setVisible(true);
+                new V_EditAnimal1().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_addAnimal;
+    public javax.swing.JButton bttn_modificar;
     public javax.swing.JTextField input_especie;
     public javax.swing.JTextField input_nombreAnimal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
     public javax.swing.JComboBox select_cuidador;
     // End of variables declaration//GEN-END:variables
