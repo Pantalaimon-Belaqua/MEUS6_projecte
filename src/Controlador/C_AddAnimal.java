@@ -14,6 +14,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.event.MouseInputListener;
 
 /**
  *
@@ -134,6 +138,27 @@ public class C_AddAnimal {
                     
                 }
             }
+        });
+        
+        // Al presionar añadir, mostrar al gatito
+        this.v_addAnimal.bttn_addAnimal.addMouseListener(new MouseAdapter() {
+
+            // Al dejar de presionar
+            @Override
+            public void mouseReleased(MouseEvent e) {v_addAnimal.bttn_addAnimal.setIcon(null);
+                
+                v_addAnimal.bttn_addAnimal.setText("Añadir");
+            }
+
+            // Al presionar
+            @Override
+            public void mousePressed(MouseEvent e) {
+                v_addAnimal.bttn_addAnimal.setText("🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾");
+                v_addAnimal.bttn_addAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/cat-tied-icon_50.png")));                
+            }
+
+            
+            
         });
                 
         // Poner la ventana al medio
