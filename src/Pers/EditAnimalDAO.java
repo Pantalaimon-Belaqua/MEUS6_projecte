@@ -21,7 +21,25 @@ public class EditAnimalDAO  extends BaseDAO {
     }
     
 
-    public void EditAnimal(int idAnimal) throws SQLException{
+    public void EditAnimal(M_Animal animal, int idAnimal) throws SQLException{
+        
+        String query;
+        PreparedStatement stmt;
+        
+        // Actualizar la tabla Animal
+        query = "UPDATE Animal SET nombre=?, especie=? WHERE id=?";
+        stmt = conn.prepareStatement(query);
+        stmt.setString(1, animal.getNombre());
+        stmt.setString(2, animal.getEspecie());
+        stmt.setInt(3, idAnimal);
+        
+        // Si hay DNI, actualizar la tabla animal_cuidador
+        if(animal.getDNICuidador() != null && !animal.getDNICuidador().isEmpty()){
+            query = "UPDATE animal_cuidador SET DNICuidador=? WHERE idAnimal=?";
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, animal.getDNICuidador());
+            stmt.setInt(2, idAnimal);
+        }
         
     }
     
@@ -32,7 +50,7 @@ public class EditAnimalDAO  extends BaseDAO {
         PreparedStatement stmt;
         ResultSet rs;
         
-        query = "select a.*, c.DNI from Animal a left join animal_cuidador ac on a.id=ac.idAnimal left join Cuidador c on ac.DNICuidador=c.DNI limit 1;";
+        query = "select a.*, c.DNI from Animal a left join animal_cuidador ac on a.id=ac.idAnimal left join Cuidador c on ac.DNICuidador=c.DNI where a.id = ? limit 1;";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, idAnimal);
         
