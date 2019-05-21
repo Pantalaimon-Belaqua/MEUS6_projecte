@@ -49,6 +49,12 @@ public class C_VerVisita {
     private void updateTable(){
         DefaultTableModel model = (DefaultTableModel) v_verVisita.tabla_visitas.getModel();
         
+        // Borrar visitas
+        int nRows = model.getRowCount();
+        for (int i = nRows - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        
         ArrayList<M_Visita> visitas = null;
                 
         try {

@@ -9,6 +9,7 @@ import Modelo.M_Animal;
 import Pers.BaseDAO;
 import Pers.PrincipalDAO;
 import Vista.V_AddAnimal;
+import Vista.V_EditAnimal;
 import Vista.V_OptionAdd;
 import Vista.V_Principal;
 import Vista.V_VerCuidador;
@@ -225,6 +226,25 @@ public class C_Principal {
                     } catch (SQLException ex) {
                         Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                }
+            }
+        });
+        
+        // Al pulsar "editar"
+        v_principal.botonEditar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (v_principal.tablaAnimales.getSelectedRow() == -1) {
+
+                    JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+
+                } else {
+                    int id = getSelectedAnimalID();
+                    
+                    V_EditAnimal v_editAnimal = new V_EditAnimal();
+                    C_EditAnimal c_editAnimal = new C_EditAnimal(v_editAnimal, id);
+                    v_editAnimal.setVisible(true);
                 }
             }
         });
