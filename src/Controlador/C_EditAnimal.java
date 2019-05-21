@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.M_Animal;
 import Pers.AddAnimalDAO;
+import Pers.EditAnimalDAO;
 import Vista.V_EditAnimal;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -29,6 +30,7 @@ import javax.swing.JOptionPane;
 public class C_EditAnimal {
 
     public V_EditAnimal v_editAnimal;
+    private EditAnimalDAO editAnimalDAO = new EditAnimalDAO();
     private AddAnimalDAO animalDAO = new AddAnimalDAO();
     private int idAnimal;
     M_Animal m_animal;
@@ -48,16 +50,19 @@ public class C_EditAnimal {
                 v_editAnimal.bttn_modificar.setEnabled(false);
                 
                 try {
+                    
                     ArrayList<String> cuidadores = animalDAO.getCuidadores();
                     
                     for (String cuidador : cuidadores) {
                         v_editAnimal.select_cuidador.addItem(cuidador);
                     }
                     
+                    // Rellenar campos
+                    setCampos();
+                    
                 } catch (SQLException ex) {
                     Logger.getLogger(C_EditAnimal.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
         
             
@@ -125,7 +130,7 @@ public class C_EditAnimal {
                     
                     // Y añade el animal a la BBDD
                     try {
-                        animalDAO.addAnimal(m_animal);
+                        editAnimalDAO.addAnimal(m_animal);
                         JOptionPane.showMessageDialog(v_editAnimal, "El animal ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
                         v_editAnimal.dispatchEvent(new WindowEvent(v_editAnimal, WindowEvent.WINDOW_CLOSING));
                     } catch (SQLException ex) {
@@ -143,7 +148,7 @@ public class C_EditAnimal {
         
     }
 
-    public boolean check() {
+    private boolean check() {
         boolean error = false;
 
         if (v_editAnimal.input_nombreAnimal.getText().isEmpty()) {
@@ -161,6 +166,14 @@ public class C_EditAnimal {
         }
 
         return error;
+    }
+    
+    private void setCampos() throws SQLException{
+        
+        M_Animal animal = editAnimalDAO.getAnimal(idAnimal);
+        
+        v_editAnimal.input_especie.setText(animal.getEspecie());
+        v_editAnimal.input_nombreAnimal.setText(animal.getNombre());
     }
 
 }

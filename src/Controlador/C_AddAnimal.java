@@ -141,7 +141,7 @@ public class C_AddAnimal {
         
     }
 
-    public boolean check() {
+    private boolean check() {
         boolean error = false;
 
         if (v_addAnimal.input_nombreAnimal.getText().isEmpty()) {
