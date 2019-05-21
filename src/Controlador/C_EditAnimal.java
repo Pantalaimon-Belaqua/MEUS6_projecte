@@ -131,7 +131,7 @@ public class C_EditAnimal {
                     // Y añade el animal a la BBDD
                     try {
                         editAnimalDAO.addAnimal(m_animal);
-                        JOptionPane.showMessageDialog(v_editAnimal, "El animal ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(v_editAnimal, "El animal ha sido editado correctamente", "", JOptionPane.INFORMATION_MESSAGE);
                         v_editAnimal.dispatchEvent(new WindowEvent(v_editAnimal, WindowEvent.WINDOW_CLOSING));
                     } catch (SQLException ex) {
                         JOptionPane.showMessageDialog(v_editAnimal, "Ha habido un error al añadir el animal", "", JOptionPane.ERROR_MESSAGE);
@@ -174,6 +174,11 @@ public class C_EditAnimal {
         
         v_editAnimal.input_especie.setText(animal.getEspecie());
         v_editAnimal.input_nombreAnimal.setText(animal.getNombre());
+        
+        // Seleccionar el DNI correcto
+        if(animal.getDNICuidador() == null){
+            v_editAnimal.select_cuidador.setSelectedIndex(0);
+        }
     }
 
 }
