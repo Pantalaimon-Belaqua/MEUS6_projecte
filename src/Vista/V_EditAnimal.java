@@ -118,18 +118,18 @@ public class V_EditAnimal extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 220, 200));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoperros.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 440));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void input_nombreAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreAnimalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_input_nombreAnimalActionPerformed
-
     private void input_especieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_especieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_input_especieActionPerformed
+
+    private void input_nombreAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_nombreAnimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_input_nombreAnimalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,10 +167,10 @@ public class V_EditAnimal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton bttn_modificar;
-    public javax.swing.JComboBox combo_cuidador;
-    public javax.swing.JTextField input_especie;
-    public javax.swing.JTextField input_nombreAnimal;
+    private javax.swing.JButton bttn_modificar;
+    private javax.swing.JComboBox combo_cuidador;
+    private javax.swing.JTextField input_especie;
+    private javax.swing.JTextField input_nombreAnimal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
