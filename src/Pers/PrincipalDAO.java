@@ -123,10 +123,12 @@ public class PrincipalDAO extends BaseDAO {
         rs = stmt.executeQuery();
         rs.next();
         
-        stmt.close();
+        
         if(rs.getInt(1) > 0){
+            stmt.close();
             return true;
         } else {
+            stmt.close();
             return false;
         }
     }
@@ -149,10 +151,12 @@ public class PrincipalDAO extends BaseDAO {
         rs = stmt.executeQuery();
         rs.next();
         
-        stmt.close();
+        
         if (rs.getInt(1) > 0) {
+            stmt.close();
             return true;
         } else {
+            stmt.close();
             return false;
         }
         
