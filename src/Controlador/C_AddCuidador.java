@@ -19,6 +19,7 @@ import java.awt.event.WindowListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import utils.SoundUtils;
 
 /**
  *
@@ -125,10 +126,12 @@ public class C_AddCuidador {
                     // Añadir el cuidador a la BBDD.
                     try {
                         cuidadorDAO.addCuidador(m_cuidador);
+                        SoundUtils.sayYay();
                         JOptionPane.showMessageDialog(v_addCuidador, "El cuidador ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
                         v_addCuidador.dispatchEvent(new WindowEvent(v_addCuidador, WindowEvent.WINDOW_CLOSING));
                     } catch (Exception ex) {
                         JOptionPane.showMessageDialog(v_addCuidador, "Ha habido un error al añadir el cuidador", "", JOptionPane.ERROR_MESSAGE);
+                        SoundUtils.playErrorSound();
                         Logger.getLogger(C_AddCuidador.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }

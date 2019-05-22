@@ -19,12 +19,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 import javax.swing.event.MouseInputListener;
+import utils.SoundUtils;
 
 /**
  *
@@ -128,10 +135,12 @@ public class C_AddAnimal {
                     // Y añade el animal a la BBDD
                     try {
                         animalDAO.addAnimal(m_animal);
-                        JOptionPane.showMessageDialog(v_addAnimal, "El animal ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                        SoundUtils.playCatSound();
+                        JOptionPane.showMessageDialog(v_addAnimal, "El animal ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);                        
                         v_addAnimal.dispatchEvent(new WindowEvent(v_addAnimal, WindowEvent.WINDOW_CLOSING));
                     } catch (SQLException ex) {
                         JOptionPane.showMessageDialog(v_addAnimal, "Ha habido un error al añadir el animal", "", JOptionPane.ERROR_MESSAGE);
+                        SoundUtils.playErrorSound();
                         Logger.getLogger(C_AddAnimal.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     
@@ -145,8 +154,7 @@ public class C_AddAnimal {
 
             // Al dejar de presionar
             @Override
-            public void mouseReleased(MouseEvent e) {v_addAnimal.bttn_addAnimal.setIcon(null);
-                
+            public void mouseReleased(MouseEvent e) {v_addAnimal.bttn_addAnimal.setIcon(null);                            
                 v_addAnimal.bttn_addAnimal.setText("Añadir");
             }
 
@@ -154,7 +162,7 @@ public class C_AddAnimal {
             @Override
             public void mousePressed(MouseEvent e) {
                 v_addAnimal.bttn_addAnimal.setText("🐾🐾🐾🐾🐾🐾🐾🐾🐾🐾");
-                v_addAnimal.bttn_addAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/cat-tied-icon_50.png")));                
+                v_addAnimal.bttn_addAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/cat-tied-icon_50.png")));                                
             }
 
             

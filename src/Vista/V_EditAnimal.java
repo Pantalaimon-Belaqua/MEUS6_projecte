@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author noelia
@@ -55,7 +57,7 @@ public class V_EditAnimal extends javax.swing.JFrame {
                 input_nombreAnimalActionPerformed(evt);
             }
         });
-        getContentPane().add(input_nombreAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 124, -1));
+        getContentPane().add(input_nombreAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 140, -1));
 
         bttn_modificar.setText("Editar");
         getContentPane().add(bttn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 80, 40));
@@ -69,16 +71,18 @@ public class V_EditAnimal extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, -1, -1));
 
         select_cuidador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ninguno" }));
-        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, -1, -1));
+        getContentPane().add(select_cuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 120, -1));
 
         input_especie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_especieActionPerformed(evt);
             }
         });
-        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 124, -1));
+        getContentPane().add(input_especie, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 140, -1));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 260, 230));
+
+        jPanel2.setBackground(new Color(255,255,255, 180));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 300, 230));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/fondoperros.jpg"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));

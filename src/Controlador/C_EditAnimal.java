@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
+import utils.SoundUtils;
 
 /**
  *
@@ -132,10 +133,12 @@ public class C_EditAnimal {
                     // Y añade el animal a la BBDD
                     try {
                         editAnimalDAO.editAnimal(m_animal, idAnimal);
-                        JOptionPane.showMessageDialog(v_editAnimal, "El animal ha sido editado correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                        SoundUtils.playCatSound();
+                        JOptionPane.showMessageDialog(v_editAnimal, "El animal ha sido editado correctamente", "", JOptionPane.INFORMATION_MESSAGE);                        
                         v_editAnimal.dispatchEvent(new WindowEvent(v_editAnimal, WindowEvent.WINDOW_CLOSING));
                     } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(v_editAnimal, "Ha habido un error al añadir el animal", "", JOptionPane.ERROR_MESSAGE);
+                        SoundUtils.playErrorSound();
+                        JOptionPane.showMessageDialog(v_editAnimal, "Ha habido un error al añadir el animal", "", JOptionPane.ERROR_MESSAGE);                        
                         Logger.getLogger(C_EditAnimal.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     

@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import utils.SoundUtils;
 
 /**
  *
@@ -58,6 +59,7 @@ public class C_VerCuidador {
 
                     try {
                         verCuidadorDAO.deleteCuidador(DNI);
+                        SoundUtils.pop();
                         updateTable();
                     } catch (SQLException ex) {
                         Logger.getLogger(C_VerCuidador.class.getName()).log(Level.SEVERE, null, ex);

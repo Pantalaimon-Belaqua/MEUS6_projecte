@@ -18,6 +18,7 @@ import java.awt.event.WindowEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import utils.SoundUtils;
 
 /**
  *
@@ -105,10 +106,12 @@ public class C_AddVisita {
                     // Añadir la visita a la BD.
                     try {
                         visitaDAO.addVisita(m_visita, idAnimal);
-                        JOptionPane.showMessageDialog(v_addVisita, "La visita ha sido añadido correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+                        SoundUtils.playSuccessSound();
+                        JOptionPane.showMessageDialog(v_addVisita, "La visita ha sido añadida correctamente", "", JOptionPane.INFORMATION_MESSAGE);                        
                         v_addVisita.dispatchEvent(new WindowEvent(v_addVisita, WindowEvent.WINDOW_CLOSING));
                     } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(v_addVisita, "Ha habido un error al añadir la visita", "", JOptionPane.ERROR_MESSAGE);
+                        SoundUtils.playErrorSound();
+                        JOptionPane.showMessageDialog(v_addVisita, "Ha habido un error al añadir la visita", "", JOptionPane.ERROR_MESSAGE);                        
                         Logger.getLogger(C_AddVisita.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }

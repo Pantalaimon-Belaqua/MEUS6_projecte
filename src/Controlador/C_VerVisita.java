@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import utils.SoundUtils;
 
 /**
  *
@@ -70,6 +71,7 @@ public class C_VerVisita {
             }
 
         } else {
+            SoundUtils.playErrorSound();
             JOptionPane.showMessageDialog(v_verVisita, "No se han podido cargar las visitas", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         

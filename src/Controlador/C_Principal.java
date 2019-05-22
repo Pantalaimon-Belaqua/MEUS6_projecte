@@ -22,10 +22,16 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
@@ -33,6 +39,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import utils.SoundUtils;
 
 /**
  *
@@ -68,6 +75,8 @@ public class C_Principal {
 
                 // Selecciona la primera fila
                 v_principal.tablaAnimales.setRowSelectionInterval(0, 0);
+                
+                SoundUtils.powerUp();
             }
 
             // Cuando se cierra la ventana, desconectar de la BBDD
@@ -133,8 +142,10 @@ public class C_Principal {
                 if (v_principal.tablaAnimales.getSelectedRow() == -1) {
 
                     JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
-
+                    SoundUtils.playWarningSound();
+                    
                 } else {
+                    SoundUtils.pop();
                     V_OptionAdd v_optionAdd = new V_OptionAdd();
                     C_OptionAdd c_optionAdd = new C_OptionAdd(v_optionAdd, getSelectedAnimalID());
                     v_optionAdd.setVisible(true);
@@ -152,12 +163,14 @@ public class C_Principal {
                 if (v_principal.tablaAnimales.getSelectedRow() == -1) {
 
                     JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+                    SoundUtils.playWarningSound();
 
                 } else {
                     int id = getSelectedAnimalID();
 
                     try {
                         principalDAO.deleteAnimal(id);
+                        SoundUtils.playAngryCatSound();
                     } catch (SQLException ex) {
                         Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -178,18 +191,20 @@ public class C_Principal {
                 if (v_principal.tablaAnimales.getSelectedRow() == -1) {
 
                     JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
-
+                    SoundUtils.playWarningSound();
                 } else {
                     // Coger el id del animal
                     int id = getSelectedAnimalID();
 
                     try {
                         if (principalDAO.hasVisits(id)) {
+                            SoundUtils.pop();
                             V_VerVisita v_verVisita = new V_VerVisita();
                             C_VerVisita c_verVisita = new C_VerVisita(v_verVisita, id);
                             v_verVisita.setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(v_principal, "El animal seleccionado no tiene visitas", "", JOptionPane.WARNING_MESSAGE);
+                            SoundUtils.playErrorSound();
                         }
                     } catch (SQLException ex) {
                         Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -207,6 +222,7 @@ public class C_Principal {
                 if (v_principal.tablaAnimales.getSelectedRow() == -1) {
 
                     JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+                    SoundUtils.playWarningSound();
 
                 } else {
                     // Coger el id del animal
@@ -215,13 +231,14 @@ public class C_Principal {
                     try {
                         if(principalDAO.hasKeepers(id)){
                             
-                            
+                            SoundUtils.pop();
                             V_VerCuidador v_verCuidador = new V_VerCuidador();
                             C_VerCuidador c_VerCuidador = new C_VerCuidador(v_verCuidador, id);
                             v_verCuidador.setVisible(true);
                             
                         } else {
                             JOptionPane.showMessageDialog(v_principal, "El animal seleccionado no tiene cuidadores", "", JOptionPane.WARNING_MESSAGE);
+                            SoundUtils.playErrorSound();
                         }
                     } catch (SQLException ex) {
                         Logger.getLogger(C_Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -238,10 +255,11 @@ public class C_Principal {
                 if (v_principal.tablaAnimales.getSelectedRow() == -1) {
 
                     JOptionPane.showMessageDialog(v_principal, "Por favor, selecciona un animal primero", "", JOptionPane.WARNING_MESSAGE);
+                    SoundUtils.playWarningSound();
 
                 } else {
                     int id = getSelectedAnimalID();
-                    
+                    SoundUtils.pop();
                     V_EditAnimal v_editAnimal = new V_EditAnimal();
                     C_EditAnimal c_editAnimal = new C_EditAnimal(v_editAnimal, id);
                     v_editAnimal.setVisible(true);
